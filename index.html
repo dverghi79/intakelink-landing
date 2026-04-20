@@ -205,26 +205,6 @@
     .hero-grid { display: grid; grid-template-columns: 1fr 380px; gap: 3rem; align-items: center; }
     @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr !important; } }
 
-    /* ── Phone mockup ── */
-    .phone-mockup {
-      width: 220px; height: 440px; border: 1px solid var(--border); border-radius: 24px;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      padding: 12px; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    }
-    .phone-mockup::before {
-      content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-      width: 140px; height: 24px; background: #000; border-radius: 0 0 20px 20px;
-      z-index: 10;
-    }
-    .phone-screen {
-      width: 100%; height: 100%; border-radius: 16px; background: #1e293b;
-      padding: 16px; overflow: hidden; display: flex; flex-direction: column;
-      gap: 12px; font-size: 0.65rem; color: var(--text-secondary);
-    }
-    .phone-doc { width: 100%; height: 24px; background: rgba(6,182,212,0.2); border-radius: 4px; display: flex; align-items: center; padding: 0 6px; color: var(--cyan); font-weight: 600; }
-    .phone-status { width: 100%; height: 8px; background: rgba(6,182,212,0.1); border-radius: 2px; position: relative; overflow: hidden; }
-    .phone-status::after { content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: var(--cyan); width: 75%; }
-
     /* ── Mobile helpers ── */
     .hide-mobile { }
     @media (max-width: 768px) {
@@ -315,20 +295,91 @@
           </div>
         </div>
 
-        <!-- Right: Phone mockup showing document upload -->
-        <div class="hide-mobile reveal-scale">
-          <div class="phone-mockup">
-            <div class="phone-screen">
-              <div style="font-weight:700;color:var(--text-primary);margin-bottom:8px;">Intake Form</div>
-              <div class="phone-doc">📄 Passport</div>
-              <div class="phone-doc">📄 Visa</div>
-              <div class="phone-doc">📄 Tax Return</div>
-              <div style="margin-top:12px;padding:8px;border:1px solid rgba(6,182,212,0.2);border-radius:6px;font-size:0.6rem;color:var(--cyan);">
-                <div style="margin-bottom:4px;">Missing: I-864</div>
-                <div class="phone-status"></div>
-                <div style="margin-top:4px;font-size:0.55rem;color:var(--text-muted);">3 of 4 ready</div>
+        <!-- Right: Phone mockup showing intake flow -->
+        <div class="reveal-scale reveal-delay-2 hide-mobile" style="display:flex;justify-content:center;">
+          <div style="position:relative;">
+            <!-- Phone frame -->
+            <div style="width:260px;border-radius:32px;border:3px solid rgba(255,255,255,0.08);background:#111113;box-shadow:0 20px 60px rgba(0,0,0,0.5),0 0 0 1px rgba(255,255,255,0.04);overflow:hidden;">
+              <!-- Status bar -->
+              <div style="padding:0.6rem 1.25rem 0.35rem;display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-size:0.55rem;font-weight:600;color:var(--text-primary);">9:41</span>
+                <div style="display:flex;gap:0.3rem;align-items:center;">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--text-primary)"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.24 4.24 0 0 0-6 0zm-4-4l2 2a7.07 7.07 0 0 1 10 0l2-2C15.68 9.68 8.32 9.68 5 13z"/></svg>
+                  <svg width="14" height="10" viewBox="0 0 24 14" fill="var(--text-primary)"><rect x="0" y="2" width="20" height="10" rx="2" stroke="var(--text-primary)" stroke-width="1.5" fill="none"/><rect x="2" y="4" width="14" height="6" rx="1" fill="var(--text-primary)"/><rect x="21" y="5" width="2" height="4" rx="0.5" fill="var(--text-primary)" opacity="0.4"/></svg>
+                </div>
+              </div>
+              <!-- App header -->
+              <div style="padding:0.5rem 1rem 0.75rem;display:flex;align-items:center;justify-content:space-between;">
+                <div style="display:flex;align-items:center;gap:0.4rem;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                  <span style="font-weight:800;font-size:0.75rem;color:var(--text-primary);">IntakeLink</span>
+                </div>
+                <div style="width:24px;height:24px;border-radius:50%;background:var(--cyan-glow);display:flex;align-items:center;justify-content:center;">
+                  <span style="font-size:0.45rem;font-weight:700;color:var(--cyan);">MC</span>
+                </div>
+              </div>
+              <!-- Progress bar -->
+              <div style="padding:0 0.85rem 0.5rem;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.35rem;">
+                  <span style="font-size:0.55rem;font-weight:600;color:var(--cyan);">Step 2 of 4</span>
+                  <span style="font-size:0.5rem;color:var(--text-muted);">Documents</span>
+                </div>
+                <div style="width:100%;height:4px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden;">
+                  <div style="width:50%;height:100%;background:var(--cyan);border-radius:4px;"></div>
+                </div>
+              </div>
+              <!-- Document uploads -->
+              <div style="padding:0 0.85rem 0.5rem;">
+                <p style="font-size:0.5rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;">Required documents</p>
+                <div style="display:flex;flex-direction:column;gap:0.4rem;">
+                  <div style="display:flex;align-items:center;gap:0.5rem;padding:0.55rem 0.65rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;">
+                    <div style="width:26px;height:26px;border-radius:6px;background:rgba(34,197,94,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div style="flex:1;min-width:0;">
+                      <p style="margin:0;font-size:0.6rem;font-weight:600;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Passport — Maria Chen</p>
+                      <p style="margin:0;font-size:0.5rem;color:#22c55e;">Verified · Uploaded 2 min ago</p>
+                    </div>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:0.5rem;padding:0.55rem 0.65rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;">
+                    <div style="width:26px;height:26px;border-radius:6px;background:rgba(34,197,94,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div style="flex:1;min-width:0;">
+                      <p style="margin:0;font-size:0.6rem;font-weight:600;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">I-94 Travel Record</p>
+                      <p style="margin:0;font-size:0.5rem;color:#22c55e;">Verified · PDF</p>
+                    </div>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:0.5rem;padding:0.55rem 0.65rem;background:var(--surface);border:1px solid rgba(6,182,212,0.15);border-radius:10px;">
+                    <div style="width:26px;height:26px;border-radius:6px;background:rgba(6,182,212,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    </div>
+                    <div style="flex:1;min-width:0;">
+                      <p style="margin:0;font-size:0.6rem;font-weight:600;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">I-864 Affidavit of Support</p>
+                      <p style="margin:0;font-size:0.5rem;color:var(--cyan);">Missing · Tap to upload</p>
+                    </div>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:0.5rem;padding:0.55rem 0.65rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;">
+                    <div style="width:26px;height:26px;border-radius:6px;background:rgba(34,197,94,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div style="flex:1;min-width:0;">
+                      <p style="margin:0;font-size:0.6rem;font-weight:600;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Tax Returns (2024)</p>
+                      <p style="margin:0;font-size:0.5rem;color:#22c55e;">Verified · 3 pages</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Bottom nav -->
+              <div style="padding:0.6rem 1rem;border-top:1px solid var(--border);display:flex;justify-content:space-around;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="1.75"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.75"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="1.75"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="1.75"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
               </div>
             </div>
+            <!-- Glow behind phone -->
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:300px;height:400px;background:radial-gradient(ellipse,rgba(6,182,212,0.08),transparent 70%);pointer-events:none;z-index:-1;"></div>
           </div>
         </div>
       </div>
@@ -365,7 +416,7 @@
       <div class="reveal">
         <p class="section-label">The Problem</p>
         <h2 class="section-title">
-          You sent the intake checklist 2 weeks ago. You're still missing 4 documents and the client thinks they're done.
+          You sent the intake checklist 2 weeks ago. You're still <span class="gradient-text">missing 4 documents</span> and the client thinks they're done.
         </h2>
         <p class="section-subtitle" style="margin-top:1.5rem;">
           Your onboarding process starts with a checklist email. The client uploads 12 files, 3 of which are duplicates and 2 are the wrong version. You email back asking for corrections. They respond a week later with the same files renamed. Meanwhile, the engagement start date keeps slipping and your team is billing hours on follow-up instead of real work.
@@ -374,24 +425,30 @@
 
       <div class="grid-3" style="margin-top:3rem;">
         <div class="glass-card reveal reveal-delay-1">
-          <div class="step-num">01</div>
-          <h3 style="font-size:1.05rem;font-weight:600;color:var(--text-primary);margin:1rem 0 0.75rem;">Intake is fragmented across multiple tools</h3>
+          <div style="width:3.25rem;height:3.25rem;border-radius:14px;background:rgba(239,68,68,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="11" y2="14"/><line x1="14" y1="13" x2="18" y2="17"/><line x1="18" y1="13" x2="14" y2="17"/></svg>
+          </div>
+          <h3 style="font-size:1.05rem;font-weight:700;color:var(--text-primary);margin-bottom:0.5rem;">Intake is fragmented across multiple tools</h3>
           <p style="color:var(--text-secondary);line-height:1.65;font-size:0.95rem;">
             Your current intake is a patchwork of email, Word docs, and a Clio matter you open manually. When a prospective client reaches out after consultation, you send three separate follow-ups: a questionnaire, an engagement letter, and a LawPay link. Some respond to one. Rarely all three.
           </p>
         </div>
 
         <div class="glass-card reveal reveal-delay-2">
-          <div class="step-num">02</div>
-          <h3 style="font-size:1.05rem;font-weight:600;color:var(--text-primary);margin:1rem 0 0.75rem;">Each new client costs 6-8 hours of admin time</h3>
+          <div style="width:3.25rem;height:3.25rem;border-radius:14px;background:rgba(6,182,212,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg>
+          </div>
+          <h3 style="font-size:1.05rem;font-weight:700;color:var(--text-primary);margin-bottom:0.5rem;">Each new client costs 6-8 hours of admin time</h3>
           <p style="color:var(--text-secondary);line-height:1.65;font-size:0.95rem;">
             For a solo immigration attorney, intake takes 2-4 hours of non-billable admin time per client. Multiply that across 12-15 new cases a month and you're spending two full working days on paperwork that a paralegal at a larger firm handles. You don't have a paralegal.
           </p>
         </div>
 
         <div class="glass-card reveal reveal-delay-3">
-          <div class="step-num">03</div>
-          <h3 style="font-size:1.05rem;font-weight:600;color:var(--text-primary);margin:1rem 0 0.75rem;">You're chasing paperwork instead of practicing law</h3>
+          <div style="width:3.25rem;height:3.25rem;border-radius:14px;background:rgba(113,113,122,0.15);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 style="font-size:1.05rem;font-weight:700;color:var(--text-primary);margin-bottom:0.5rem;">You're chasing paperwork instead of practicing law</h3>
           <p style="color:var(--text-secondary);line-height:1.65;font-size:0.95rem;">
             You spent years mastering immigration law so you can help people stay, reunite, and build a life here. You spend your evenings chasing incomplete intake forms and unsigned engagement letters instead. The intake should take care of itself.
           </p>
@@ -407,7 +464,7 @@
     <div class="container">
       <div style="text-align:center;margin-bottom:3rem;">
         <p class="section-label" style="justify-content:center;">How It Works</p>
-        <h2 class="section-title" style="margin:0 auto;">The four-step intake that actually closes deals</h2>
+        <h2 class="section-title" style="margin:0 auto;">The four-step intake that <span class="gradient-text">actually closes deals</span></h2>
       </div>
 
       <!-- Pipeline diagram -->
@@ -442,41 +499,57 @@
       </div>
 
       <div class="grid-2" style="gap:2rem;">
-        <div class="glass-card reveal reveal-delay-1">
-          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
-            <div class="step-num" style="background:rgba(6,182,212,0.1);">1</div>
-            <h3 style="font-size:1.05rem;font-weight:600;color:var(--text-primary);">Client uploads documents</h3>
+        <div class="glass-card reveal reveal-delay-1" style="position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;right:0;width:80px;height:80px;background:radial-gradient(circle at top right, var(--cyan-glow), transparent);pointer-events:none;"></div>
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
+            <div class="step-num">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);">Step 1</span>
           </div>
+          <h3 style="font-size:1.05rem;font-weight:700;color:var(--text-primary);margin-bottom:0.5rem;">Client uploads documents</h3>
           <p style="color:var(--text-secondary);line-height:1.65;font-size:0.95rem;">
             You send one branded link. Your client fills out their immigration details, uploads passport, visa, tax returns, and any supporting documents. No account, no hassle. The form validates file format and completeness in real time.
           </p>
         </div>
 
-        <div class="glass-card reveal reveal-delay-2">
-          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
-            <div class="step-num" style="background:rgba(6,182,212,0.1);">2</div>
-            <h3 style="font-size:1.05rem;font-weight:600;color:var(--text-primary);">IntakeLink verifies completeness</h3>
+        <div class="glass-card reveal reveal-delay-2" style="position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;right:0;width:80px;height:80px;background:radial-gradient(circle at top right, var(--cyan-glow), transparent);pointer-events:none;"></div>
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
+            <div class="step-num">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);">Step 2</span>
           </div>
+          <h3 style="font-size:1.05rem;font-weight:700;color:var(--text-primary);margin-bottom:0.5rem;">IntakeLink verifies completeness</h3>
           <p style="color:var(--text-secondary);line-height:1.65;font-size:0.95rem;">
             The system checks that all required documents are present and correctly formatted. If something's missing or wrong, the client sees exactly what needs to be fixed before they can submit. No email back-and-forth.
           </p>
         </div>
 
-        <div class="glass-card reveal reveal-delay-3">
-          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
-            <div class="step-num" style="background:rgba(6,182,212,0.1);">3</div>
-            <h3 style="font-size:1.05rem;font-weight:600;color:var(--text-primary);">Engagement letter auto-generates</h3>
+        <div class="glass-card reveal reveal-delay-3" style="position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;right:0;width:80px;height:80px;background:radial-gradient(circle at top right, var(--cyan-glow), transparent);pointer-events:none;"></div>
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
+            <div class="step-num">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);">Step 3</span>
           </div>
+          <h3 style="font-size:1.05rem;font-weight:700;color:var(--text-primary);margin-bottom:0.5rem;">Engagement letter auto-generates</h3>
           <p style="color:var(--text-secondary);line-height:1.65;font-size:0.95rem;">
             The client's intake data prepopulates your engagement letter template. It appears in the same browser window, ready for e-signature. Your client reads it and signs without leaving the intake flow.
           </p>
         </div>
 
-        <div class="glass-card reveal reveal-delay-1">
-          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
-            <div class="step-num" style="background:rgba(6,182,212,0.1);">4</div>
-            <h3 style="font-size:1.05rem;font-weight:600;color:var(--text-primary);">LawPay retainer collected</h3>
+        <div class="glass-card reveal reveal-delay-1" style="position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;right:0;width:80px;height:80px;background:radial-gradient(circle at top right, var(--cyan-glow), transparent);pointer-events:none;"></div>
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
+            <div class="step-num">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);">Step 4</span>
           </div>
+          <h3 style="font-size:1.05rem;font-weight:700;color:var(--text-primary);margin-bottom:0.5rem;">LawPay retainer collected</h3>
           <p style="color:var(--text-secondary);line-height:1.65;font-size:0.95rem;">
             Once the engagement letter is signed, a LawPay payment request appears for your standard retainer. Payment goes straight to your account. You get a Slack notification that the case is funded and ready to open in Clio.
           </p>
@@ -492,52 +565,52 @@
     <div class="container">
       <div class="reveal">
         <p class="section-label">Built For</p>
-        <h2 class="section-title">Solo immigration attorneys who run a full practice without a paralegal</h2>
+        <h2 class="section-title">Solo immigration attorneys who run <span class="gradient-text">a full practice without a paralegal</span></h2>
       </div>
 
       <div class="grid-2" style="margin-top:2rem;gap:2rem;">
         <div class="glass-card reveal reveal-delay-1">
-          <span class="section-label" style="margin-bottom:1rem;">The time problem</span>
-          <h3 style="font-size:1.15rem;font-weight:600;color:var(--text-primary);margin-bottom:0.75rem;">Stop chasing clients for missing files.</h3>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);display:block;margin-bottom:1rem;">The time problem</span>
+          <h3 style="font-size:1.15rem;font-weight:700;color:var(--text-primary);margin-bottom:0.75rem;">Stop chasing clients for missing files.</h3>
           <p style="color:var(--text-secondary);line-height:1.65;font-size:0.95rem;">
             The average solo immigration attorney loses 6-8 hours per new client to manual intake. IntakeLink compresses that to a single link your client completes in under 20 minutes.
           </p>
         </div>
 
         <div class="glass-card reveal reveal-delay-2">
-          <span class="section-label" style="margin-bottom:1rem;">The conversion problem</span>
-          <h3 style="font-size:1.15rem;font-weight:600;color:var(--text-primary);margin-bottom:0.75rem;">Look organized and in control from day one.</h3>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);display:block;margin-bottom:1rem;">The conversion problem</span>
+          <h3 style="font-size:1.15rem;font-weight:700;color:var(--text-primary);margin-bottom:0.75rem;">Look organized and in control from day one.</h3>
           <p style="color:var(--text-secondary);line-height:1.65;font-size:0.95rem;">
             Most immigration client losses happen between consultation and signed engagement — the client goes cold waiting for your follow-up. IntakeLink closes that window with a link you send the moment consultation ends.
           </p>
         </div>
       </div>
 
-      <div style="margin-top:2rem;display:flex;flex-wrap:wrap;gap:0.75rem;">
-        <span class="tag reveal">Solo immigration attorneys</span>
-        <span class="tag reveal reveal-delay-1">AILA members</span>
-        <span class="tag reveal reveal-delay-2">H-1B specialists</span>
-        <span class="tag reveal reveal-delay-3">Family-based practices</span>
-        <span class="tag reveal reveal-delay-1">Docketwise users</span>
-        <span class="tag reveal reveal-delay-2">1-3 attorney firms</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       FOUNDER CREDIBILITY
-       ═══════════════════════════════════════════ -->
-  <section style="background:rgba(6,182,212,0.02);border-top:1px solid rgba(6,182,212,0.08);">
-    <div class="container">
-      <div class="reveal" style="max-width:680px;margin:0 auto;text-align:center;">
-        <div style="display:flex;align-items:center;justify-content:center;gap:1.25rem;padding:1.5rem;border:1px solid var(--border);border-radius:16px;background:var(--surface);backdrop-filter:blur(12px);margin:0 auto;width:fit-content;">
-          <img src="https://leanaistudio.com/founder.jpeg" alt="Dario Verghi" style="width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(6,182,212,0.3);" />
-          <div style="text-align:left;">
-            <p style="margin:0;font-size:1rem;font-weight:700;color:var(--text-primary);">Built by Dario Verghi</p>
-            <p style="margin:0.2rem 0 0;font-size:0.875rem;color:var(--cyan);font-weight:600;">Former VP who onboarded 200+ enterprise clients</p>
-            <p style="margin:0.35rem 0 0;font-size:0.85rem;color:var(--text-secondary);line-height:1.5;max-width:320px;">I spent years watching onboarding timelines blow up because of document chaos. The fix isn't a better email template. It's a system that won't let incomplete submissions through.</p>
-          </div>
-        </div>
+      <div style="margin-top:2rem;display:flex;flex-wrap:wrap;gap:0.65rem;" class="reveal">
+        <span class="tag" style="display:inline-flex;align-items:center;gap:0.4rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.75" stroke-linecap="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          Solo immigration attorneys
+        </span>
+        <span class="tag" style="display:inline-flex;align-items:center;gap:0.4rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          AILA members
+        </span>
+        <span class="tag" style="display:inline-flex;align-items:center;gap:0.4rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.75" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          H-1B specialists
+        </span>
+        <span class="tag" style="display:inline-flex;align-items:center;gap:0.4rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.75" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Family-based practices
+        </span>
+        <span class="tag" style="display:inline-flex;align-items:center;gap:0.4rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.75" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          Docketwise users
+        </span>
+        <span class="tag" style="display:inline-flex;align-items:center;gap:0.4rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.75" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          1-3 attorney firms
+        </span>
       </div>
     </div>
   </section>
@@ -551,7 +624,7 @@
         <!-- Left: copy -->
         <div class="reveal">
           <p class="section-label">Early access · Limited founding member spots</p>
-          <h2 class="section-title" style="margin-bottom:1.5rem;">We're onboarding 50 founding teams. Here's what you get.</h2>
+          <h2 class="section-title" style="margin-bottom:1.5rem;">We're onboarding <span class="gradient-text">50 founding teams.</span> Here's what you get.</h2>
           <p style="color:var(--text-secondary);line-height:1.7;font-size:0.95rem;margin-bottom:2rem;">
             We are onboarding a small group of solo immigration attorneys to test IntakeLink before full launch.
           </p>
@@ -627,25 +700,41 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
+       PROOF BADGE
+       ═══════════════════════════════════════════ -->
+  <section style="padding:2.5rem 0 0;">
+    <div class="container" style="text-align:center;">
+      <div class="reveal" style="display:inline-flex;align-items:center;gap:1rem;padding:1rem 1.5rem;border:1px solid var(--border);border-radius:14px;background:var(--surface);">
+        <img src="https://leanaistudio.com/founder.jpeg" alt="Dario Verghi" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(6,182,212,0.2);" />
+        <div style="text-align:left;">
+          <p style="margin:0;font-size:0.875rem;color:var(--text-primary);font-weight:600;">A project by <a href="https://leanaistudio.com" target="_blank" rel="noopener" style="color:var(--cyan);text-decoration:none;">LeanAI Studio</a>, built by <a href="https://www.linkedin.com/in/verghi/" target="_blank" rel="noopener" style="color:var(--cyan);text-decoration:none;">Dario Verghi</a></p>
+          <p style="margin:0.25rem 0 0;font-size:0.8125rem;color:var(--text-muted);line-height:1.5;">Building focused tools for underserved B2B niches.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
        FOOTER
        ═══════════════════════════════════════════ -->
-  <footer style="border-top:1px solid var(--border);padding:2.5rem 0;">
+  <footer style="padding:2.5rem 0;margin-top:1rem;">
     <div class="container">
+      <div class="sep" style="margin-bottom:1.5rem;"></div>
       <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:1.25rem;margin-bottom:1.25rem;">
         <div style="display:flex;align-items:center;gap:0.5rem;">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/>
           </svg>
-          <span style="font-family:'Inter',sans-serif;font-weight:700;font-size:0.875rem;color:var(--text-primary);">IntakeLink</span>
+          <span style="font-weight:800;font-size:0.875rem;color:var(--text-primary);">IntakeLink</span>
         </div>
-        <div style="display:flex;flex-wrap:wrap;gap:1.5rem;font-size:0.75rem;color:var(--text-muted);">
-          <a href="mailto:info@leanaistudio.com" style="color:inherit;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--text-secondary)'" onmouseout="this.style.color='var(--text-muted)'">info@leanaistudio.com</a>
-          <a href="/privacy.html" style="color:inherit;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--text-secondary)'" onmouseout="this.style.color='var(--text-muted)'">Privacy Policy</a>
-          <a href="/terms.html" style="color:inherit;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--text-secondary)'" onmouseout="this.style.color='var(--text-muted)'">Terms of Service</a>
+        <div style="display:flex;flex-wrap:wrap;gap:1.5rem;font-size:0.75rem;">
+          <a href="mailto:info@leanaistudio.com" style="color:var(--text-muted);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--text-secondary)'" onmouseout="this.style.color='var(--text-muted)'">info@leanaistudio.com</a>
+          <a href="/privacy.html" style="color:var(--text-muted);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--text-secondary)'" onmouseout="this.style.color='var(--text-muted)'">Privacy Policy</a>
+          <a href="/terms.html" style="color:var(--text-muted);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--text-secondary)'" onmouseout="this.style.color='var(--text-muted)'">Terms of Service</a>
         </div>
       </div>
-      <div style="border-top:1px solid var(--border);padding-top:1rem;font-size:0.7rem;color:var(--text-muted);line-height:1.8;">
-        <p style="margin:0;">© 2026 LeanAI Studio srl — P.IVA/CF: 14561020968</p>
+      <div style="font-size:0.7rem;color:var(--text-muted);line-height:1.8;opacity:0.6;">
+        <p style="margin:0;">&copy; 2026 LeanAI Studio srl — P.IVA/CF: 14561020968</p>
         <p style="margin:0;">IntakeLink is a product of LeanAI Studio srl</p>
       </div>
     </div>
