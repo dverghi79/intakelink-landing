@@ -387,22 +387,189 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
-       STATS / METRICS
+       KEY METRICS (JobLedger layout — glass cards + icons)
        ═══════════════════════════════════════════ -->
-  <section class="accent-section">
+  <section style="padding:2rem 0 4rem;">
     <div class="container">
-      <div class="grid-3">
-        <div class="reveal">
-          <div class="stat-number"><span class="counter" data-target="6">0</span>-8</div>
-          <p style="color:var(--text-secondary);margin-top:0.5rem;font-size:0.95rem;">Hours saved per new client intake</p>
+      <div class="grid-3" style="gap:1.25rem;">
+        <!-- Stat 1: 6-8 Hours -->
+        <div class="glass-card reveal reveal-delay-1" style="text-align:center;padding:2rem 1.5rem;">
+          <div style="width:3.25rem;height:3.25rem;border-radius:14px;background:rgba(6,182,212,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="stat-number" style="margin-bottom:0.4rem;"><span class="counter" data-target="6">0</span>-8</div>
+          <p style="font-size:0.9rem;color:var(--text-muted);margin:0;">Hours saved per new client intake</p>
         </div>
-        <div class="reveal reveal-delay-1">
-          <div class="stat-number"><span class="counter" data-target="87">0</span>%</div>
-          <p style="color:var(--text-secondary);margin-top:0.5rem;font-size:0.95rem;">Client submissions complete on first try</p>
+        <!-- Stat 2: 87% -->
+        <div class="glass-card reveal reveal-delay-2" style="text-align:center;padding:2rem 1.5rem;">
+          <div style="width:3.25rem;height:3.25rem;border-radius:14px;background:rgba(6,182,212,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <div class="stat-number" style="margin-bottom:0.4rem;"><span class="counter" data-target="87">0</span>%</div>
+          <p style="font-size:0.9rem;color:var(--text-muted);margin:0;">Client submissions complete on first try</p>
         </div>
-        <div class="reveal reveal-delay-2">
-          <div class="stat-number">48<span style="font-size:0.7em;color:var(--text-secondary);">h</span></div>
-          <p style="color:var(--text-secondary);margin-top:0.5rem;font-size:0.95rem;">From consultation to signed retainer</p>
+        <!-- Stat 3: 48h -->
+        <div class="glass-card reveal reveal-delay-3" style="text-align:center;padding:2rem 1.5rem;">
+          <div style="width:3.25rem;height:3.25rem;border-radius:14px;background:rgba(6,182,212,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="stat-number" style="margin-bottom:0.4rem;"><span class="counter" data-target="48" data-suffix="h">0</span></div>
+          <p style="font-size:0.9rem;color:var(--text-muted);margin:0;">From consultation to signed retainer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PRODUCT PREVIEW (Desktop Dashboard)
+       ═══════════════════════════════════════════ -->
+  <section style="padding:3rem 0 5rem;">
+    <div class="container">
+      <p class="section-label reveal">Product Preview</p>
+
+      <div class="reveal-scale" style="border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,0.5);background:#111113;">
+        <!-- Top bar -->
+        <div style="background:#161618;padding:0.65rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);">
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <div style="display:flex;gap:0.3rem;">
+              <div style="width:8px;height:8px;border-radius:50%;background:#ff5f57;"></div>
+              <div style="width:8px;height:8px;border-radius:50%;background:#ffbd2e;"></div>
+              <div style="width:8px;height:8px;border-radius:50%;background:#28c840;"></div>
+            </div>
+            <span style="font-weight:800;font-size:0.65rem;color:var(--cyan);letter-spacing:-0.01em;">IntakeLink</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span style="font-size:0.5rem;color:var(--text-muted);font-family:'JetBrains Mono',monospace;">app.intakelink.leanaistudio.com</span>
+            <div style="width:22px;height:22px;border-radius:50%;background:rgba(6,182,212,0.15);display:flex;align-items:center;justify-content:center;">
+              <span style="font-size:0.45rem;font-weight:700;color:var(--cyan);">DV</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard Body -->
+        <div style="display:flex;min-height:380px;font-family:'Inter',system-ui,sans-serif;">
+          <!-- Sidebar -->
+          <div style="width:150px;flex-shrink:0;background:#0e0e10;border-right:1px solid var(--border);padding:1rem 0.6rem;display:flex;flex-direction:column;gap:0.15rem;" class="hide-mobile">
+            <div style="padding:0.45rem 0.65rem;border-radius:10px;font-size:0.55rem;color:var(--cyan);font-weight:600;background:rgba(6,182,212,0.15);display:flex;align-items:center;gap:0.45rem;margin-bottom:0.3rem;">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+              Dashboard
+            </div>
+            <div style="padding:0.45rem 0.65rem;border-radius:10px;font-size:0.55rem;color:var(--text-muted);display:flex;align-items:center;gap:0.45rem;">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              Clients
+            </div>
+            <div style="padding:0.45rem 0.65rem;border-radius:10px;font-size:0.55rem;color:var(--text-muted);display:flex;align-items:center;gap:0.45rem;">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Documents
+            </div>
+            <div style="padding:0.45rem 0.65rem;border-radius:10px;font-size:0.55rem;color:var(--text-muted);display:flex;align-items:center;gap:0.45rem;">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+              Retainers
+            </div>
+            <div style="padding:0.45rem 0.65rem;border-radius:10px;font-size:0.55rem;color:var(--text-muted);display:flex;align-items:center;gap:0.45rem;">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              Payments
+            </div>
+            <div style="padding:0.45rem 0.65rem;border-radius:10px;font-size:0.55rem;color:var(--text-muted);display:flex;align-items:center;gap:0.45rem;">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              Settings
+            </div>
+          </div>
+
+          <!-- Main Content -->
+          <div style="flex:1;padding:1.1rem 1.25rem;overflow:hidden;background:#111113;">
+            <!-- Header -->
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+              <div>
+                <div style="font-size:0.85rem;font-weight:700;color:var(--text-primary);">Client Intake Dashboard</div>
+                <div style="font-size:0.45rem;color:var(--text-muted);margin-top:0.15rem;font-family:'JetBrains Mono',monospace;">Last updated: Today 3:15 PM &middot; 3 new submissions</div>
+              </div>
+              <div style="display:flex;gap:0.35rem;" class="hide-mobile">
+                <div style="padding:0.25rem 0.55rem;border-radius:8px;font-size:0.45rem;color:var(--text-muted);border:1px solid var(--border);">This Week</div>
+                <div style="padding:0.25rem 0.55rem;border-radius:8px;font-size:0.45rem;color:var(--cyan);border:1px solid rgba(6,182,212,0.2);background:rgba(6,182,212,0.05);">This Month</div>
+                <div style="padding:0.25rem 0.55rem;border-radius:8px;font-size:0.45rem;color:var(--text-muted);border:1px solid var(--border);">Quarter</div>
+              </div>
+            </div>
+
+            <!-- KPI Cards -->
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.55rem;margin-bottom:1rem;">
+              <div style="padding:0.75rem;background:var(--surface);border:1px solid var(--border);border-radius:12px;">
+                <div style="font-size:0.45rem;color:var(--text-muted);margin-bottom:0.3rem;text-transform:uppercase;letter-spacing:0.06em;">Active Intakes</div>
+                <div style="font-size:1.2rem;font-weight:800;color:var(--text-primary);line-height:1;">12</div>
+                <div style="font-size:0.42rem;color:var(--green);margin-top:0.25rem;">4 completed today</div>
+              </div>
+              <div style="padding:0.75rem;background:var(--surface);border:1px solid var(--border);border-radius:12px;">
+                <div style="font-size:0.45rem;color:var(--text-muted);margin-bottom:0.3rem;text-transform:uppercase;letter-spacing:0.06em;">Completion Rate</div>
+                <div style="font-size:1.2rem;font-weight:800;color:var(--text-primary);line-height:1;">87%</div>
+                <div style="font-size:0.42rem;color:var(--green);margin-top:0.25rem;">+12% vs manual</div>
+              </div>
+              <div style="padding:0.75rem;background:var(--surface);border:1px solid var(--border);border-radius:12px;">
+                <div style="font-size:0.45rem;color:var(--text-muted);margin-bottom:0.3rem;text-transform:uppercase;letter-spacing:0.06em;">Retainers Signed</div>
+                <div style="font-size:1.2rem;font-weight:800;color:var(--cyan);line-height:1;">$18.5K</div>
+                <div style="font-size:0.42rem;color:rgba(6,182,212,0.6);margin-top:0.25rem;">8 this month</div>
+              </div>
+              <div style="padding:0.75rem;background:var(--surface);border:1px solid var(--border);border-radius:12px;">
+                <div style="font-size:0.45rem;color:var(--text-muted);margin-bottom:0.3rem;text-transform:uppercase;letter-spacing:0.06em;">Avg Time</div>
+                <div style="font-size:1.2rem;font-weight:800;color:var(--green);line-height:1;">48h</div>
+                <div style="font-size:0.42rem;color:var(--text-muted);margin-top:0.25rem;">consult → retainer</div>
+              </div>
+            </div>
+
+            <!-- Chart + Table (desktop) -->
+            <div style="display:grid;grid-template-columns:1fr 1.8fr;gap:0.6rem;" class="hide-mobile">
+              <!-- Chart -->
+              <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:0.75rem;">
+                <div style="font-size:0.48rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem;">Intake Completions (6 wk)</div>
+                <svg viewBox="0 0 200 70" style="width:100%;height:auto;" preserveAspectRatio="xMidYMid meet">
+                  <line x1="0" y1="17.5" x2="200" y2="17.5" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+                  <line x1="0" y1="35" x2="200" y2="35" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+                  <line x1="0" y1="52.5" x2="200" y2="52.5" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+                  <polygon points="0,50 33,45 66,40 100,35 133,28 166,22 200,18 200,70 0,70" fill="url(#cyanGrad)" opacity="0.15"/>
+                  <defs><linearGradient id="cyanGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
+                  <polyline points="0,50 33,45 66,40 100,35 133,28 166,22 200,18" fill="none" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="200" cy="18" r="3" fill="#06b6d4"/>
+                  <circle cx="200" cy="18" r="6" fill="none" stroke="rgba(6,182,212,0.3)" stroke-width="1"/>
+                  <text x="0" y="68" fill="rgba(255,255,255,0.2)" font-size="5" font-family="monospace">W1</text>
+                  <text x="95" y="68" fill="rgba(255,255,255,0.2)" font-size="5" font-family="monospace">W3</text>
+                  <text x="190" y="68" fill="rgba(255,255,255,0.2)" font-size="5" font-family="monospace">W6</text>
+                </svg>
+              </div>
+
+              <!-- Table -->
+              <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:0.75rem;overflow:hidden;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
+                  <div style="font-size:0.48rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;">Recent Client Intakes</div>
+                </div>
+                <table style="width:100%;border-collapse:collapse;">
+                  <thead><tr>
+                    <th style="padding:0.4rem 0.5rem;font-size:0.42rem;font-weight:600;color:var(--text-muted);text-align:left;border-bottom:1px solid var(--border);text-transform:uppercase;letter-spacing:0.06em;">Client</th>
+                    <th style="padding:0.4rem 0.5rem;font-size:0.42rem;font-weight:600;color:var(--text-muted);text-align:left;border-bottom:1px solid var(--border);text-transform:uppercase;letter-spacing:0.06em;">Case Type</th>
+                    <th style="padding:0.4rem 0.5rem;font-size:0.42rem;font-weight:600;color:var(--text-muted);text-align:left;border-bottom:1px solid var(--border);text-transform:uppercase;letter-spacing:0.06em;">Docs</th>
+                    <th style="padding:0.4rem 0.5rem;font-size:0.42rem;font-weight:600;color:var(--text-muted);text-align:left;border-bottom:1px solid var(--border);text-transform:uppercase;letter-spacing:0.06em;">Status</th>
+                  </tr></thead>
+                  <tbody>
+                    <tr><td style="padding:0.4rem 0.5rem;font-size:0.5rem;color:var(--text-primary);border-bottom:1px solid rgba(255,255,255,0.03);">Maria Chen</td><td style="padding:0.4rem 0.5rem;font-size:0.5rem;color:var(--text-muted);border-bottom:1px solid rgba(255,255,255,0.03);">H-1B Transfer</td><td style="padding:0.4rem 0.5rem;font-size:0.5rem;color:var(--text-muted);border-bottom:1px solid rgba(255,255,255,0.03);">8/8</td><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(255,255,255,0.03);"><span style="font-size:0.4rem;padding:0.12rem 0.4rem;border-radius:9999px;background:rgba(34,197,94,0.1);color:var(--green);font-weight:600;">SIGNED</span></td></tr>
+                    <tr><td style="padding:0.4rem 0.5rem;font-size:0.5rem;color:var(--text-primary);border-bottom:1px solid rgba(255,255,255,0.03);">Ahmed Patel</td><td style="padding:0.4rem 0.5rem;font-size:0.5rem;color:var(--text-muted);border-bottom:1px solid rgba(255,255,255,0.03);">I-485 AOS</td><td style="padding:0.4rem 0.5rem;font-size:0.5rem;color:var(--cyan);border-bottom:1px solid rgba(255,255,255,0.03);">5/7</td><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(255,255,255,0.03);"><span style="font-size:0.4rem;padding:0.12rem 0.4rem;border-radius:9999px;background:rgba(6,182,212,0.1);color:var(--cyan);font-weight:600;">IN PROGRESS</span></td></tr>
+                    <tr><td style="padding:0.4rem 0.5rem;font-size:0.5rem;color:var(--text-primary);">Lisa Nguyen</td><td style="padding:0.4rem 0.5rem;font-size:0.5rem;color:var(--text-muted);">Family I-130</td><td style="padding:0.4rem 0.5rem;font-size:0.5rem;color:var(--green);">6/6</td><td style="padding:0.4rem 0.5rem;"><span style="font-size:0.4rem;padding:0.12rem 0.4rem;border-radius:9999px;background:rgba(34,197,94,0.1);color:var(--green);font-weight:600;">PAID</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Mobile table -->
+            <div style="display:none;" class="show-mobile-only">
+              <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:0.75rem;overflow-x:auto;">
+                <div style="font-size:0.48rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;">Recent Client Intakes</div>
+                <table style="width:100%;border-collapse:collapse;">
+                  <thead><tr><th style="padding:0.35rem 0.5rem;font-size:0.42rem;font-weight:600;color:var(--text-muted);text-align:left;border-bottom:1px solid var(--border);">Client</th><th style="padding:0.35rem 0.5rem;font-size:0.42rem;font-weight:600;color:var(--text-muted);text-align:left;border-bottom:1px solid var(--border);">Docs</th><th style="padding:0.35rem 0.5rem;font-size:0.42rem;font-weight:600;color:var(--text-muted);text-align:left;border-bottom:1px solid var(--border);">Status</th></tr></thead>
+                  <tbody>
+                    <tr><td style="padding:0.35rem 0.5rem;font-size:0.5rem;color:var(--text-primary);border-bottom:1px solid rgba(255,255,255,0.03);">Maria Chen</td><td style="padding:0.35rem 0.5rem;font-size:0.5rem;color:var(--text-muted);border-bottom:1px solid rgba(255,255,255,0.03);">8/8</td><td style="padding:0.35rem 0.5rem;border-bottom:1px solid rgba(255,255,255,0.03);"><span style="font-size:0.4rem;padding:0.1rem 0.3rem;border-radius:9999px;background:rgba(34,197,94,0.1);color:var(--green);font-weight:600;">SIGNED</span></td></tr>
+                    <tr><td style="padding:0.35rem 0.5rem;font-size:0.5rem;color:var(--text-primary);">Ahmed Patel</td><td style="padding:0.35rem 0.5rem;font-size:0.5rem;color:var(--cyan);">5/7</td><td style="padding:0.35rem 0.5rem;"><span style="font-size:0.4rem;padding:0.1rem 0.3rem;border-radius:9999px;background:rgba(6,182,212,0.1);color:var(--cyan);font-weight:600;">IN PROG</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -629,11 +796,20 @@
             We are onboarding a small group of solo immigration attorneys to test IntakeLink before full launch.
           </p>
 
-          <p style="font-size:0.875rem;font-weight:600;color:var(--text-primary);margin-bottom:0.75rem;">What you'll get:</p>
+          <p style="font-size:0.875rem;font-weight:700;color:var(--text-primary);margin-bottom:0.75rem;">What you'll get:</p>
           <div style="display:flex;flex-direction:column;gap:0.75rem;font-size:0.875rem;margin-bottom:1.5rem;">
-            <p style="display:flex;align-items:center;gap:0.625rem;color:rgba(232,240,248,0.75);margin:0;"><span style="width:5px;height:5px;border-radius:50%;background:var(--cyan);flex-shrink:0;"></span>Guided intake that ensures correct documents</p>
-            <p style="display:flex;align-items:center;gap:0.625rem;color:rgba(232,240,248,0.75);margin:0;"><span style="width:5px;height:5px;border-radius:50%;background:var(--cyan);flex-shrink:0;"></span>Automatic follow-ups for missing items</p>
-            <p style="display:flex;align-items:center;gap:0.625rem;color:rgba(232,240,248,0.75);margin:0;"><span style="width:5px;height:5px;border-radius:50%;background:var(--cyan);flex-shrink:0;"></span>Signed retainer before work begins</p>
+            <p style="display:flex;align-items:center;gap:0.625rem;color:var(--text-secondary);margin:0;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Guided intake that ensures correct documents
+            </p>
+            <p style="display:flex;align-items:center;gap:0.625rem;color:var(--text-secondary);margin:0;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Automatic follow-ups for missing items
+            </p>
+            <p style="display:flex;align-items:center;gap:0.625rem;color:var(--text-secondary);margin:0;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Signed retainer before work begins
+            </p>
           </div>
           <p style="font-size:0.8rem;color:var(--cyan);font-weight:600;">First 50 teams get lifetime founding access and direct founder onboarding. Once spots are filled, onboarding closes before launch.</p>
         </div>
