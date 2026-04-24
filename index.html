@@ -226,51 +226,6 @@
     .pipeline-step { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; flex: 1; }
     .pipeline-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--cyan-glow); display: flex; align-items: center; justify-content: center; border: 1px solid rgba(6,182,212,0.2); }
     .pipeline-arrow { font-size: 1.5rem; color: var(--cyan); opacity: 0.6; }
-
-    /* AHA MOMENT MORPHING ANIMATION */
-    .aha-wrap{max-width:900px;margin:0 auto;border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,0.5);background:#111113;}
-    .aha-chrome{background:#161618;padding:0.6rem 1rem;display:flex;align-items:center;gap:0.75rem;border-bottom:1px solid var(--border);}
-    .aha-dots span{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:4px;}
-    .aha-status{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:0.7rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:8px;transition:all 0.6s ease;}
-    .aha-status.pain{background:rgba(239,68,68,0.12);color:#ef4444;}
-    .aha-status.syncing{background:rgba(168,85,247,0.12);color:#a855f7;}
-    .aha-status.done{background:rgba(34,197,94,0.12);color:#22c55e;}
-    .aha-body{padding:1.5rem 1.5rem 1rem;position:relative;}
-    .aha-caption{text-align:center;padding:0.75rem 0 1rem;font-size:1.1rem;font-weight:700;transition:all 0.5s ease;min-height:2.5rem;}
-    .aha-form{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;transition:all 0.8s ease;}
-    .aha-field{padding:0.6rem 0.75rem;border-radius:8px;font-size:0.75rem;font-family:'JetBrains Mono',monospace;transition:all 0.8s ease;position:relative;overflow:hidden;}
-    .aha-field-label{font-size:0.55rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem;transition:color 0.6s ease;}
-    .aha-field-value{font-size:0.8rem;font-weight:500;transition:color 0.6s ease;}
-    .aha-field.full{grid-column:1/-1;}
-    .aha-form.state-pain .aha-field{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2);}
-    .aha-form.state-pain .aha-field-label{color:rgba(239,68,68,0.6);}
-    .aha-form.state-pain .aha-field-value{color:var(--text-muted);}
-    .aha-form.state-pain .aha-field.has-error{border-color:#ef4444;box-shadow:0 0 0 1px rgba(239,68,68,0.3);}
-    .aha-form.state-pain .aha-field.has-error .aha-field-value{color:#ef4444;text-decoration:line-through;}
-    .aha-form.state-syncing .aha-field{background:rgba(168,85,247,0.05);border:1px solid rgba(168,85,247,0.15);}
-    .aha-form.state-syncing .aha-field-label{color:rgba(168,85,247,0.6);}
-    .aha-form.state-syncing .aha-field-value{color:#a855f7;}
-    .aha-form.state-done .aha-field{background:rgba(34,197,94,0.05);border:1px solid rgba(34,197,94,0.18);}
-    .aha-form.state-done .aha-field-label{color:rgba(34,197,94,0.6);}
-    .aha-form.state-done .aha-field-value{color:var(--text-primary);}
-    .aha-form.state-done .aha-field.has-error{border-color:rgba(34,197,94,0.18);box-shadow:none;}
-    .aha-form.state-done .aha-field.has-error .aha-field-value{color:var(--text-primary);text-decoration:none;}
-    .aha-scan{height:2px;background:transparent;margin:0.75rem 0 0;border-radius:2px;overflow:hidden;position:relative;}
-    .aha-scan-bar{position:absolute;top:0;left:0;width:0;height:100%;border-radius:2px;transition:width 1.2s ease-in-out;}
-    .aha-timer-strip{display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:0.75rem;padding:0.5rem 0;font-family:'JetBrains Mono',monospace;font-size:0.75rem;transition:all 0.5s ease;min-height:2rem;}
-    @media (max-width:600px){.aha-form{grid-template-columns:1fr;}}
-    /* ── Logical Closer ── */
-    .closer-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:900px;margin:0 auto;}
-    .closer-card{border-radius:16px;padding:2rem 1.75rem;}
-    .closer-card-old{background:rgba(239,68,68,0.03);border:1px solid rgba(239,68,68,0.12);}
-    .closer-card-new{background:rgba(34,197,94,0.03);border:1px solid rgba(34,197,94,0.15);}
-    .closer-label{font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;font-family:'JetBrains Mono',monospace;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.5rem;}
-    .closer-item{display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:1.15rem;}
-    .closer-item:last-child{margin-bottom:0;}
-    .closer-icon{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
-    .closer-icon-x{background:rgba(239,68,68,0.1);}
-    .closer-icon-check{background:rgba(34,197,94,0.1);}
-    @media (max-width:768px){.closer-grid{grid-template-columns:1fr;gap:1rem;}}
   </style>
 </head>
 <body>
@@ -460,73 +415,6 @@
           </div>
           <div class="stat-number" style="margin-bottom:0.4rem;"><span class="counter" data-target="48" data-suffix="h">0</span></div>
           <p style="font-size:0.9rem;color:var(--text-muted);margin:0;">From consultation to signed retainer</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       AHA MOMENT MORPHING ANIMATION
-       ═══════════════════════════════════════════ -->
-  <section id="aha-section" style="padding:3rem 0 5rem;">
-    <div class="container">
-      <div class="reveal">
-        <p class="section-label">Watch the transformation</p>
-        <h2 class="section-title">From paper chaos to digital intake in under 5 minutes</h2>
-      </div>
-
-      <div class="aha-wrap reveal reveal-delay-1" style="margin-top:2.5rem;">
-        <!-- Chrome bar -->
-        <div class="aha-chrome">
-          <div class="aha-dots">
-            <span style="background:#ff5f57;"></span>
-            <span style="background:#ffbd2e;"></span>
-            <span style="background:#28c840;"></span>
-          </div>
-          <span style="font-size:0.6rem;color:var(--text-muted);">intakelink.app</span>
-          <div class="aha-status pain" id="aha-badge">PAPER</div>
-        </div>
-
-        <!-- Body -->
-        <div class="aha-body">
-          <!-- Caption -->
-          <div class="aha-caption" id="aha-caption">Monday morning. 12 paper intake forms on your desk.</div>
-
-          <!-- Form fields -->
-          <div class="aha-form state-pain" id="aha-form">
-            <div class="aha-field">
-              <div class="aha-field-label">Client Name</div>
-              <div class="aha-field-value">Handwritten — can't read it</div>
-            </div>
-            <div class="aha-field">
-              <div class="aha-field-label">Contact Info</div>
-              <div class="aha-field-value">Wrong phone number — called twice</div>
-            </div>
-            <div class="aha-field">
-              <div class="aha-field-label">Insurance</div>
-              <div class="aha-field-value">Faxed — missing policy number</div>
-            </div>
-            <div class="aha-field">
-              <div class="aha-field-label">Incident Details</div>
-              <div class="aha-field-value">3-page PDF — half blank</div>
-            </div>
-            <div class="aha-field full">
-              <div class="aha-field-label">Case Management</div>
-              <div class="aha-field-value">Retyped into Clio manually</div>
-            </div>
-            <div class="aha-field full">
-              <div class="aha-field-label">Status</div>
-              <div class="aha-field-value">2 days to process one intake</div>
-            </div>
-          </div>
-
-          <!-- Progress bar -->
-          <div class="aha-scan">
-            <div class="aha-scan-bar" id="aha-scan-bar" style="background:rgba(239,68,68,0.6);"></div>
-          </div>
-
-          <!-- Timer -->
-          <div class="aha-timer-strip" id="aha-timer">⏱ 45 minutes per intake × 12 new clients</div>
         </div>
       </div>
     </div>
@@ -728,116 +616,6 @@
           <p style="color:var(--text-secondary);line-height:1.65;font-size:0.95rem;">
             You spent years mastering immigration law so you can help people stay, reunite, and build a life here. You spend your evenings chasing incomplete intake forms and unsigned engagement letters instead. The intake should take care of itself.
           </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       LOGICAL CLOSER: OLD WAY VS NEW WAY
-       ═══════════════════════════════════════════ -->
-  <section style="padding:3rem 0 5rem;">
-    <div class="container">
-      <div class="reveal">
-        <p class="section-label">The old way vs. the IntakeLink way</p>
-        <h2 class="section-title">From paper chaos to digital intake in under 5 minutes</h2>
-      </div>
-
-      <div class="closer-grid reveal reveal-delay-1" style="margin-top:2.5rem;">
-        <!-- Old Way -->
-        <div class="closer-card closer-card-old">
-          <div class="closer-label">
-            <span style="width:6px;height:6px;border-radius:50%;background:#ef4444;"></span>
-            The Old Way
-          </div>
-
-          <div class="closer-item">
-            <div class="closer-icon closer-icon-x">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            </div>
-            <div>
-              <p style="font-size:0.9rem;color:var(--text-primary);font-weight:500;margin-bottom:0.2rem;">Handwritten intake forms nobody can read</p>
-              <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Client rushes through paperwork, half of it's illegible</p>
-            </div>
-          </div>
-
-          <div class="closer-item">
-            <div class="closer-icon closer-icon-x">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            </div>
-            <div>
-              <p style="font-size:0.9rem;color:var(--text-primary);font-weight:500;margin-bottom:0.2rem;">Data re-entry into case management</p>
-              <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">You manually type everything into Clio (2–3 hours)</p>
-            </div>
-          </div>
-
-          <div class="closer-item">
-            <div class="closer-icon closer-icon-x">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            </div>
-            <div>
-              <p style="font-size:0.9rem;color:var(--text-primary);font-weight:500;margin-bottom:0.2rem;">Missing info requires follow-up calls</p>
-              <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Client goes cold waiting for your calls back</p>
-            </div>
-          </div>
-
-          <div class="closer-item">
-            <div class="closer-icon closer-icon-x">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            </div>
-            <div>
-              <p style="font-size:0.9rem;color:var(--text-primary);font-weight:500;margin-bottom:0.2rem;">2-day intake process delays case start</p>
-              <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Client loses confidence, goes to another firm</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- New Way -->
-        <div class="closer-card closer-card-new">
-          <div class="closer-label">
-            <span style="width:6px;height:6px;border-radius:50%;background:#22c55e;"></span>
-            The IntakeLink Way
-          </div>
-
-          <div class="closer-item">
-            <div class="closer-icon closer-icon-check">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <div>
-              <p style="font-size:0.9rem;color:var(--text-primary);font-weight:500;margin-bottom:0.2rem;">Smart digital forms clients complete on their phone</p>
-              <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">One branded link sent right after consultation ends</p>
-            </div>
-          </div>
-
-          <div class="closer-item">
-            <div class="closer-icon closer-icon-check">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <div>
-              <p style="font-size:0.9rem;color:var(--text-primary);font-weight:500;margin-bottom:0.2rem;">Auto-sync to Clio/MyCase/PracticePanther</p>
-              <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Data populates automatically — zero re-entry</p>
-            </div>
-          </div>
-
-          <div class="closer-item">
-            <div class="closer-icon closer-icon-check">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <div>
-              <p style="font-size:0.9rem;color:var(--text-primary);font-weight:500;margin-bottom:0.2rem;">Required fields + validation = complete intake every time</p>
-              <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">No back-and-forth — form won't submit until everything's filled</p>
-            </div>
-          </div>
-
-          <div class="closer-item">
-            <div class="closer-icon closer-icon-check">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <div>
-              <p style="font-size:0.9rem;color:var(--text-primary);font-weight:500;margin-bottom:0.2rem;">New matters created in minutes not days</p>
-              <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Case ready to open in Clio before client leaves the link</p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -1315,146 +1093,10 @@
       return false;
     }
 
-    // Aha moment morphing animation
-    function ahaAnimation() {
-      const badges = {
-        pain: { text: 'PAPER', class: 'pain' },
-        syncing: { text: 'SYNCING', class: 'syncing' },
-        done: { text: 'COMPLETE', class: 'done' }
-      };
-
-      const captions = {
-        pain: 'Monday morning. 12 paper intake forms on your desk.',
-        syncing: 'IntakeLink digitizing and syncing to case management…',
-        done: 'All 12 intakes processed. Matters created. 4 minutes total.'
-      };
-
-      const timers = {
-        pain: '⏱ 45 minutes per intake × 12 new clients',
-        syncing: '⟳ Validating fields · syncing to Clio…',
-        done: '✓ 12 matters created · all fields validated · zero re-entry'
-      };
-
-      const painData = {
-        'Client Name': 'Handwritten — can\'t read it',
-        'Contact Info': 'Wrong phone number — called twice',
-        'Insurance': 'Faxed — missing policy number',
-        'Incident Details': '3-page PDF — half blank',
-        'Case Management': 'Retyped into Clio manually',
-        'Status': '2 days to process one intake'
-      };
-
-      const doneData = {
-        'Client Name': 'Sarah Martinez · PI Auto Accident',
-        'Contact Info': '(555) 812-4477 · sarah.m@email.com',
-        'Insurance': 'State Farm · Policy #SF-8847231 · verified',
-        'Incident Details': 'Rear-end collision · Hwy 101 · 03/15/2026',
-        'Case Management': 'Auto-synced to Clio · Matter #2026-0847 created',
-        'Status': 'Intake complete in 4 minutes · conflict check passed'
-      };
-
-      const badge = document.getElementById('aha-badge');
-      const caption = document.getElementById('aha-caption');
-      const form = document.getElementById('aha-form');
-      const scanBar = document.getElementById('aha-scan-bar');
-      const timer = document.getElementById('aha-timer');
-      const fields = form.querySelectorAll('.aha-field');
-
-      let currentState = 'pain';
-      let animationTimeout;
-
-      function updateFieldValues(data, state) {
-        const fieldLabels = form.querySelectorAll('.aha-field-label');
-        fieldLabels.forEach(label => {
-          const key = label.textContent.trim();
-          const parent = label.closest('.aha-field');
-          const value = parent.querySelector('.aha-field-value');
-          if (data[key]) {
-            value.textContent = data[key];
-            if (state === 'pain' && key === 'Client Name') {
-              parent.classList.add('has-error');
-            } else {
-              parent.classList.remove('has-error');
-            }
-          }
-        });
-      }
-
-      function transitionTo(newState) {
-        currentState = newState;
-
-        // Update badge
-        badge.className = 'aha-status ' + badges[newState].class;
-        badge.textContent = badges[newState].text;
-
-        // Update caption
-        caption.textContent = captions[newState];
-
-        // Update timer
-        timer.textContent = timers[newState];
-
-        // Update form state
-        form.className = 'aha-form state-' + newState;
-
-        // Update field values for done state
-        if (newState === 'done') {
-          updateFieldValues(doneData, newState);
-        } else if (newState === 'pain') {
-          updateFieldValues(painData, newState);
-        }
-
-        // Animate scan bar
-        if (newState === 'syncing') {
-          scanBar.style.background = 'rgba(168,85,247,0.6)';
-          scanBar.style.width = '0%';
-          setTimeout(() => {
-            scanBar.style.width = '100%';
-          }, 50);
-        } else if (newState === 'done') {
-          scanBar.style.background = 'rgba(34,197,94,0.6)';
-          scanBar.style.width = '100%';
-        } else {
-          scanBar.style.width = '0%';
-          scanBar.style.background = 'rgba(239,68,68,0.6)';
-        }
-      }
-
-      function animateSequence() {
-        transitionTo('pain');
-
-        animationTimeout = setTimeout(() => {
-          transitionTo('syncing');
-        }, 3000);
-
-        animationTimeout = setTimeout(() => {
-          transitionTo('done');
-        }, 6500);
-
-        animationTimeout = setTimeout(() => {
-          animateSequence();
-        }, 10000);
-      }
-
-      // Start animation when section is visible
-      const ahaSection = document.getElementById('aha-section');
-      if (ahaSection) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting && !animationTimeout) {
-              animateSequence();
-              observer.unobserve(ahaSection);
-            }
-          });
-        }, { threshold: 0.3 });
-        observer.observe(ahaSection);
-      }
-    }
-
     // Initialize on load
     document.addEventListener('DOMContentLoaded', function() {
       setupRevealAnimations();
       setupCounters();
-      ahaAnimation();
     });
   </script>
 
@@ -1470,6 +1112,22 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
     Book a Call with the Founder
   </a>
+
+
+<!-- DKI: Dynamic Keyword Insertion — replaces hero H1 with ?headline= param -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var params = new URLSearchParams(window.location.search);
+  var hl = params.get('headline');
+  if (hl) {
+    var h1 = document.querySelector('h1.reveal.reveal-delay-1') || document.querySelector('section h1') || document.querySelector('h1');
+    if (h1) {
+      h1.setAttribute('data-default-headline', h1.innerHTML);
+      h1.textContent = decodeURIComponent(hl.replace(/\+/g, ' '));
+    }
+  }
+});
+</script>
 
 </body>
 </html>
