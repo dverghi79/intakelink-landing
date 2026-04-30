@@ -182,7 +182,6 @@
 
     /* ── Stats ── */
     .stat-number { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; color: var(--text-primary); font-variant-numeric: tabular-nums; }
-    .stat-number .counter { display: inline-block; }
 
     /* ── Accent section ── */
     .accent-section {
@@ -223,8 +222,7 @@
     @keyframes shimmer { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 
     /* ── Hero grid ── */
-    .hero-grid { display: grid; grid-template-columns: 1fr 380px; gap: 3rem; align-items: center; }
-    @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr !important; } }
+    .hero-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; max-width: 680px; }
 
     /* ── Mobile helpers ── */
     .hide-mobile { }
@@ -260,7 +258,7 @@
         </svg>
         <span style="font-weight:800;font-size:1.2rem;color:var(--text-primary);letter-spacing:-0.02em;">IntakeLink</span>
       </div>
-      <a href="#waitlist" class="btn-sm">Join the waitlist</a>
+      <a href="#waitlist" class="btn-sm">Join the waitlist for early access</a>
     </div>
   </header>
   <div style="height:3.25rem;"></div>
@@ -279,17 +277,11 @@
         <!-- Left: Copy -->
         <div>
           <div class="reveal" style="margin-bottom:1.5rem;">
-            <div class="badge"><span class="dot"></span> Early Access — Immigration Attorneys</div>
+            <div class="badge"><span class="dot"></span> → Early Access Open · Limited spots</div>
           </div>
 
-          <div class="reveal reveal-delay-1" style="margin-bottom:0.75rem;">
-            <div style="display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(6,182,212,0.15);border-radius:8px;padding:0.35rem 0.75rem;color:var(--cyan);font-size:0.8rem;font-family:'JetBrains Mono',monospace;font-weight:600;background:rgba(6,182,212,0.04);">
-              Most attorneys chase documents after intake. You'll get everything upfront.
-            </div>
-          </div>
-
-          <h1 class="reveal reveal-delay-1" style="font-size:clamp(2.25rem,4.5vw,3.25rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:1.5rem;color:var(--text-primary);">
-            One link that captures documents, generates retainers, <span class="gradient-text">and collects payment upfront.</span>
+          <h1 id="hero-headline" class="reveal reveal-delay-1" data-default-headline="From consultation to signed retainer in one link." style="font-size:clamp(2.25rem,4.5vw,3.25rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:1.5rem;color:var(--text-primary);">
+            From consultation to <span class="gradient-text">signed retainer in one link.</span>
           </h1>
 
           <div class="reveal reveal-delay-2" style="display:flex;flex-direction:column;gap:0.65rem;margin-bottom:2.5rem;max-width:600px;">
@@ -309,137 +301,17 @@
 
           <div class="reveal reveal-delay-3" style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;">
             <a href="#waitlist" class="btn-primary">
-              Get the Right Documents the First Time
+              Join the waitlist for early access
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
             <a href="#how-it-works" class="btn-ghost">See how it works ↓</a>
           </div>
         </div>
 
-        <!-- Right: Phone mockup showing intake flow -->
-        <div class="reveal-scale reveal-delay-2 hide-mobile" style="display:flex;justify-content:center;">
-          <div style="position:relative;">
-            <!-- Phone frame -->
-            <div style="width:260px;border-radius:32px;border:3px solid rgba(255,255,255,0.08);background:#111113;box-shadow:0 20px 60px rgba(0,0,0,0.5),0 0 0 1px rgba(255,255,255,0.04);overflow:hidden;">
-              <!-- Status bar -->
-              <div style="padding:0.6rem 1.25rem 0.35rem;display:flex;justify-content:space-between;align-items:center;">
-                <span style="font-size:0.55rem;font-weight:600;color:var(--text-primary);">9:41</span>
-                <div style="display:flex;gap:0.3rem;align-items:center;">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--text-primary)"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.24 4.24 0 0 0-6 0zm-4-4l2 2a7.07 7.07 0 0 1 10 0l2-2C15.68 9.68 8.32 9.68 5 13z"/></svg>
-                  <svg width="14" height="10" viewBox="0 0 24 14" fill="var(--text-primary)"><rect x="0" y="2" width="20" height="10" rx="2" stroke="var(--text-primary)" stroke-width="1.5" fill="none"/><rect x="2" y="4" width="14" height="6" rx="1" fill="var(--text-primary)"/><rect x="21" y="5" width="2" height="4" rx="0.5" fill="var(--text-primary)" opacity="0.4"/></svg>
-                </div>
-              </div>
-              <!-- App header -->
-              <div style="padding:0.5rem 1rem 0.75rem;display:flex;align-items:center;justify-content:space-between;">
-                <div style="display:flex;align-items:center;gap:0.4rem;">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
-                  <span style="font-weight:800;font-size:0.75rem;color:var(--text-primary);">IntakeLink</span>
-                </div>
-                <div style="width:24px;height:24px;border-radius:50%;background:var(--cyan-glow);display:flex;align-items:center;justify-content:center;">
-                  <span style="font-size:0.45rem;font-weight:700;color:var(--cyan);">MC</span>
-                </div>
-              </div>
-              <!-- Progress bar -->
-              <div style="padding:0 0.85rem 0.5rem;">
-                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.35rem;">
-                  <span style="font-size:0.55rem;font-weight:600;color:var(--cyan);">Step 2 of 4</span>
-                  <span style="font-size:0.5rem;color:var(--text-muted);">Documents</span>
-                </div>
-                <div style="width:100%;height:4px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden;">
-                  <div style="width:50%;height:100%;background:var(--cyan);border-radius:4px;"></div>
-                </div>
-              </div>
-              <!-- Document uploads -->
-              <div style="padding:0 0.85rem 0.5rem;">
-                <p style="font-size:0.5rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;">Required documents</p>
-                <div style="display:flex;flex-direction:column;gap:0.4rem;">
-                  <div style="display:flex;align-items:center;gap:0.5rem;padding:0.55rem 0.65rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;">
-                    <div style="width:26px;height:26px;border-radius:6px;background:rgba(34,197,94,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    </div>
-                    <div style="flex:1;min-width:0;">
-                      <p style="margin:0;font-size:0.6rem;font-weight:600;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Passport — Maria Chen</p>
-                      <p style="margin:0;font-size:0.5rem;color:#22c55e;">Verified · Uploaded 2 min ago</p>
-                    </div>
-                  </div>
-                  <div style="display:flex;align-items:center;gap:0.5rem;padding:0.55rem 0.65rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;">
-                    <div style="width:26px;height:26px;border-radius:6px;background:rgba(34,197,94,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    </div>
-                    <div style="flex:1;min-width:0;">
-                      <p style="margin:0;font-size:0.6rem;font-weight:600;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">I-94 Travel Record</p>
-                      <p style="margin:0;font-size:0.5rem;color:#22c55e;">Verified · PDF</p>
-                    </div>
-                  </div>
-                  <div style="display:flex;align-items:center;gap:0.5rem;padding:0.55rem 0.65rem;background:var(--surface);border:1px solid rgba(6,182,212,0.15);border-radius:10px;">
-                    <div style="width:26px;height:26px;border-radius:6px;background:rgba(6,182,212,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                    </div>
-                    <div style="flex:1;min-width:0;">
-                      <p style="margin:0;font-size:0.6rem;font-weight:600;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">I-864 Affidavit of Support</p>
-                      <p style="margin:0;font-size:0.5rem;color:var(--cyan);">Missing · Tap to upload</p>
-                    </div>
-                  </div>
-                  <div style="display:flex;align-items:center;gap:0.5rem;padding:0.55rem 0.65rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;">
-                    <div style="width:26px;height:26px;border-radius:6px;background:rgba(34,197,94,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    </div>
-                    <div style="flex:1;min-width:0;">
-                      <p style="margin:0;font-size:0.6rem;font-weight:600;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Tax Returns (2024)</p>
-                      <p style="margin:0;font-size:0.5rem;color:#22c55e;">Verified · 3 pages</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Bottom nav -->
-              <div style="padding:0.6rem 1rem;border-top:1px solid var(--border);display:flex;justify-content:space-around;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="1.75"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.75"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="1.75"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="1.75"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-              </div>
-            </div>
-            <!-- Glow behind phone -->
-            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:300px;height:400px;background:radial-gradient(ellipse,rgba(6,182,212,0.08),transparent 70%);pointer-events:none;z-index:-1;"></div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       KEY METRICS (JobLedger layout — glass cards + icons)
-       ═══════════════════════════════════════════ -->
-  <section style="padding:2rem 0 4rem;">
-    <div class="container">
-      <div class="grid-3" style="gap:1.25rem;">
-        <!-- Stat 1: 6-8 Hours -->
-        <div class="glass-card reveal reveal-delay-1" style="text-align:center;padding:2rem 1.5rem;">
-          <div style="width:3.25rem;height:3.25rem;border-radius:14px;background:rgba(6,182,212,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <div class="stat-number" style="margin-bottom:0.4rem;"><span class="counter" data-target="6">0</span>-8</div>
-          <p style="font-size:0.9rem;color:var(--text-muted);margin:0;">Hours saved per new client intake</p>
-        </div>
-        <!-- Stat 2: 87% -->
-        <div class="glass-card reveal reveal-delay-2" style="text-align:center;padding:2rem 1.5rem;">
-          <div style="width:3.25rem;height:3.25rem;border-radius:14px;background:rgba(6,182,212,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-          </div>
-          <div class="stat-number" style="margin-bottom:0.4rem;"><span class="counter" data-target="87">0</span>%</div>
-          <p style="font-size:0.9rem;color:var(--text-muted);margin:0;">Client submissions complete on first try</p>
-        </div>
-        <!-- Stat 3: 48h -->
-        <div class="glass-card reveal reveal-delay-3" style="text-align:center;padding:2rem 1.5rem;">
-          <div style="width:3.25rem;height:3.25rem;border-radius:14px;background:rgba(6,182,212,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          </div>
-          <div class="stat-number" style="margin-bottom:0.4rem;"><span class="counter" data-target="48" data-suffix="h">0</span></div>
-          <p style="font-size:0.9rem;color:var(--text-muted);margin:0;">From consultation to signed retainer</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ═══════════════════════════════════════════
        PRODUCT PREVIEW (Desktop Dashboard)
@@ -836,28 +708,34 @@
       <div class="grid-2" style="gap:3rem 5rem;align-items:start;">
         <!-- Left: copy -->
         <div class="reveal">
-          <p class="section-label">Early access · Limited founding member spots</p>
-          <h2 class="section-title" style="margin-bottom:1.5rem;">We're onboarding <span class="gradient-text">50 founding teams.</span> Here's what you get.</h2>
+          <p class="section-label">Early Access · Limited Spots</p>
+          <h2 class="section-title" style="margin-bottom:1.5rem;">Be among the first to use <span class="gradient-text">IntakeLink.</span></h2>
           <p style="color:var(--text-secondary);line-height:1.7;font-size:0.95rem;margin-bottom:2rem;">
-            We are onboarding a small group of solo immigration attorneys to test IntakeLink before full launch.
+            We are onboarding a small group of solo immigration attorneys to test IntakeLink before full launch. Join the waitlist and be the first to know when early access opens.
           </p>
 
-          <p style="font-size:0.875rem;font-weight:700;color:var(--text-primary);margin-bottom:0.75rem;">What you'll get:</p>
           <div style="display:flex;flex-direction:column;gap:0.75rem;font-size:0.875rem;margin-bottom:1.5rem;">
             <p style="display:flex;align-items:center;gap:0.625rem;color:var(--text-secondary);margin:0;">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Guided intake that ensures correct documents
+              Free during early access
             </p>
             <p style="display:flex;align-items:center;gap:0.625rem;color:var(--text-secondary);margin:0;">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Automatic follow-ups for missing items
+              Your feedback shapes the product
             </p>
             <p style="display:flex;align-items:center;gap:0.625rem;color:var(--text-secondary);margin:0;">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Signed retainer before work begins
+              No credit card required
+            </p>
+            <p style="display:flex;align-items:center;gap:0.625rem;color:var(--text-secondary);margin:0;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              First to know when we launch
+            </p>
+            <p style="display:flex;align-items:center;gap:0.625rem;color:var(--text-secondary);margin:0;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Get a sample branded intake link for a sample I-130 case
             </p>
           </div>
-          <p style="font-size:0.8rem;color:var(--cyan);font-weight:600;">First 50 teams get lifetime founding access and direct founder onboarding. Once spots are filled, onboarding closes before launch.</p>
         </div>
 
         <!-- Right: form -->
@@ -908,7 +786,7 @@
             </div>
 
             <button type="submit" id="submit-btn" class="btn-primary" style="">
-              Get the Right Documents the First Time
+              Join the waitlist for early access
             </button>
             <p style="font-size:0.75rem;color:rgba(180,210,230,0.65);text-align:center;margin:0;">By signing up you accept our <a href="/privacy.html" style="color:var(--cyan);text-decoration:underline;">Privacy Policy</a> and analytics cookies. No spam — we will only contact you about IntakeLink.</p>
             <div style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1rem;padding:0.75rem 1rem;border:1px solid var(--border);border-radius:12px;background:var(--surface);cursor:pointer;" id="inline-booking" onclick="openCalendly(event)">
@@ -979,33 +857,6 @@
       reveals.forEach(function(el) { observer.observe(el); });
     }
 
-    // Animated counter
-    function setupCounters() {
-      var counters = document.querySelectorAll('.counter');
-      function animateCounter(el, target, duration) {
-        var current = 0;
-        var increment = target / (duration / 16);
-        var interval = setInterval(function() {
-          current += increment;
-          if (current >= target) {
-            current = target;
-            clearInterval(interval);
-          }
-          el.textContent = Math.floor(current);
-        }, 16);
-      }
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting && !entry.target.dataset.animated) {
-            entry.target.dataset.animated = true;
-            var target = parseInt(entry.target.dataset.target);
-            animateCounter(entry.target, target, 1000);
-          }
-        });
-      }, { threshold: 0.3 });
-      counters.forEach(function(el) { observer.observe(el); });
-    }
-
     // Form handling
     function getUTMParams() {
       var params = new URLSearchParams(window.location.search);
@@ -1022,7 +873,7 @@
       if (formStep === 1) {
         formStep = 2;
         document.getElementById('form-step-2').style.display = 'flex';
-        document.getElementById('submit-btn').textContent = 'Get the Right Documents the First Time';
+        document.getElementById('submit-btn').textContent = 'Join the waitlist for early access';
       }
     }
 
@@ -1131,7 +982,28 @@
     // Initialize on load
     document.addEventListener('DOMContentLoaded', function() {
       setupRevealAnimations();
-      setupCounters();
+
+      /* DKI headline replacement — Google Ads ?headline= override */
+      var params = new URLSearchParams(window.location.search);
+      var customHL = params.get('headline');
+      if (customHL) {
+        var heroEl = document.getElementById('hero-headline');
+        if (heroEl) heroEl.textContent = decodeURIComponent(customHL);
+      }
+
+      /* Mobile sticky CTA bar — hide when waitlist form is visible */
+      var mobileCta = document.getElementById('mobile-cta-bar');
+      if (mobileCta) {
+        var waitlistSec = document.getElementById('waitlist');
+        if (waitlistSec) {
+          var ctaObs = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+              mobileCta.classList.toggle('hidden', entry.isIntersecting);
+            });
+          }, { threshold: 0.1 });
+          ctaObs.observe(waitlistSec);
+        }
+      }
     });
   </script>
 
@@ -1142,13 +1014,23 @@
     .founder-booking-badge { position: fixed; bottom: 24px; right: 24px; z-index: 9999; display: flex; align-items: center; gap: 8px; padding: 12px 20px; background: rgba(255,255,255,0.05); color: var(--text-primary); border: 1px solid var(--border); border-radius: 50px; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: all 0.2s ease; text-decoration: none; backdrop-filter: blur(8px); }
     .founder-booking-badge:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(6,182,212,0.2); background: rgba(6,182,212,0.05); border-color: rgba(6,182,212,0.2); }
     .founder-booking-badge svg { width: 18px; height: 18px; flex-shrink: 0; }
+    /* Mobile sticky CTA bar */
+    .mobile-cta-bar{display:none;}
+    @media(max-width:768px){
+      .mobile-cta-bar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:9998;padding:10px 16px;background:rgba(8,8,10,0.95);border-top:1px solid var(--border);backdrop-filter:blur(12px);align-items:center;justify-content:center;gap:10px;transition:transform 0.3s ease;}
+      .mobile-cta-bar.hidden{transform:translateY(100%);}
+      .mobile-cta-bar a{display:block;width:100%;max-width:360px;text-align:center;padding:12px 24px;background:var(--cyan);color:#08080a;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;border-radius:12px;text-decoration:none;letter-spacing:-0.01em;}
+      .founder-booking-badge{bottom:72px;}
+      body{padding-bottom:60px;}
+    }
   </style>
   <a class="founder-booking-badge" id="floating-booking" href="#" onclick="openCalendly(event)">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
     Book a Call with the Founder
   </a>
 
-
+  <!-- Mobile sticky CTA bar -->
+  <div class="mobile-cta-bar" id="mobile-cta-bar"><a href="#waitlist">Get a Sample Intake Link</a></div>
 
 </body>
 </html>
