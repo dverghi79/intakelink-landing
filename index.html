@@ -268,6 +268,12 @@
       .btn-primary { width: 100%; justify-content: center; }
       input, select, textarea { width: 100% !important; min-height: 48px !important; font-size: 16px !important; }
       button[type="submit"] { min-height: 48px !important; }
+      /* Hide heavy images on mobile to save scroll length */
+      .mobile-hide-img { display: none !important; }
+      /* Capability panels: reduce padding + min-height */
+      .capabilities-wrap > div:last-child { padding: 1.25rem !important; min-height: auto !important; }
+      /* Inline mockup grids: force single column on mobile */
+      .cap-mockup-grid { grid-template-columns: 1fr !important; }
     }
     .show-mobile-only { display: none !important; }
     @media (max-width: 768px) { .show-mobile-only { display: block !important; } }
@@ -412,13 +418,13 @@
             <!-- Inline mockup: Form builder -->
             <div style="border:1px solid var(--border);border-radius:10px;padding:1.25rem;margin-bottom:1.25rem;background:#0d0d10;">
               <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
-                <div style="display:flex;gap:0.5rem;">
+                <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
                   <span style="padding:0.3rem 0.75rem;border-radius:20px;font-size:0.7rem;font-weight:600;background:var(--cyan);color:#08080a;">1. Contact Info</span>
                   <span style="padding:0.3rem 0.75rem;border-radius:20px;font-size:0.7rem;font-weight:500;background:#1a1a1e;color:var(--text-muted);border:1px solid var(--border);">2. Case Details</span>
                   <span style="padding:0.3rem 0.75rem;border-radius:20px;font-size:0.7rem;font-weight:500;background:#1a1a1e;color:var(--text-muted);border:1px solid var(--border);">3. Documents</span>
                 </div>
               </div>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem;">
+              <div class="cap-mockup-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem;">
                 <div>
                   <div style="font-size:0.65rem;color:var(--text-muted);margin-bottom:0.3rem;text-transform:uppercase;letter-spacing:0.05em;">Full Name</div>
                   <div style="background:#1a1a1e;border:1px solid var(--border);border-radius:6px;padding:0.5rem 0.75rem;font-size:0.8rem;color:var(--text-secondary);">Sarah Mitchell</div>
@@ -524,7 +530,7 @@
                   <span style="font-size:0.8rem;font-weight:600;color:var(--cyan);">IOLTA Trust Account ****4821</span>
                 </div>
                 <div style="height:1px;background:var(--border);margin:0.75rem 0;"></div>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;">
+                <div class="cap-mockup-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;">
                   <div>
                     <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;">CARD NUMBER</div>
                     <div style="background:#08080a;border:1px solid var(--border);border-radius:5px;padding:0.4rem 0.6rem;font-size:0.75rem;color:var(--text-secondary);">•••• •••• •••• 7294</div>
@@ -604,7 +610,7 @@
                 <span style="font-size:0.85rem;font-weight:600;color:var(--text-primary);">Mitchell_Sarah_PI_2024-003</span>
                 <span style="padding:0.15rem 0.5rem;border-radius:10px;font-size:0.6rem;font-weight:600;background:rgba(34,197,94,0.15);color:#22c55e;margin-left:0.5rem;">Auto-generated</span>
               </div>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.75rem;">
+              <div class="cap-mockup-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.75rem;">
                 <div style="display:flex;align-items:center;gap:0.5rem;padding:0.5rem 0.7rem;background:#1a1a1e;border-radius:6px;border:1px solid var(--border);">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
                   <span style="font-size:0.7rem;color:var(--text-secondary);">Engagement Letter.pdf</span>
@@ -643,7 +649,7 @@
             <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:1.25rem;">See every intake in flight — who started, who stalled, who completed. Track conversion rates, average time-to-retainer, and revenue collected. Your front desk and managing partners get the visibility they need without asking around.</p>
             <!-- Inline mockup: Dashboard -->
             <div style="border:1px solid var(--border);border-radius:10px;padding:1.25rem;margin-bottom:1.25rem;background:#0d0d10;">
-              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-bottom:1rem;">
+              <div class="cap-mockup-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-bottom:1rem;">
                 <div style="background:#1a1a1e;border:1px solid var(--border);border-radius:8px;padding:0.75rem;text-align:center;">
                   <div style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.2rem;">Active</div>
                   <div style="font-size:1.3rem;font-weight:800;color:var(--cyan);">12</div>
@@ -705,7 +711,7 @@
             You sent the intake checklist 2 weeks ago. You're still <span class="gradient-text">missing 4 documents</span> and the client thinks they're done.
           </h2>
         </div>
-        <div class="reveal reveal-delay-2" style="border-radius:16px;overflow:hidden;">
+        <div class="reveal reveal-delay-2 mobile-hide-img" style="border-radius:16px;overflow:hidden;">
           <img src="images/problem-overwhelmed.png" alt="Overwhelmed attorney buried in paperwork at a messy desk late at night" style="width:100%;height:auto;display:block;" loading="lazy" />
         </div>
       </div>
@@ -930,7 +936,7 @@
           <p class="section-label">Built For</p>
           <h2 class="section-title">Solo immigration attorneys who run <span class="gradient-text">a full practice without a paralegal</span></h2>
         </div>
-        <div class="reveal reveal-delay-2" style="border-radius:16px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,0.35);">
+        <div class="reveal reveal-delay-2 mobile-hide-img" style="border-radius:16px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,0.35);">
           <img src="images/built-for-attorney.png" alt="Solo immigration attorney running a full practice" style="width:100%;height:auto;display:block;" loading="lazy" />
         </div>
       </div>
@@ -1016,7 +1022,7 @@
 
         <!-- Right: trust image + form -->
         <div class="reveal reveal-delay-1">
-          <div style="margin-bottom:1.5rem;border-radius:12px;overflow:hidden;">
+          <div class="mobile-hide-img" style="margin-bottom:1.5rem;border-radius:12px;overflow:hidden;">
             <img src="images/early-access-trust.png" alt="Attorney and client handshake — trusted partnership" style="width:100%;height:auto;display:block;" loading="lazy" />
           </div>
           <!-- Success state -->
