@@ -128,7 +128,35 @@
     .badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); animation: pulse-dot 2s ease-in-out infinite; }
     @keyframes pulse-dot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.5); } }
     .sticky-header nav a:not(.btn-sm):hover { color: var(--cyan); }
-    @media (max-width: 768px) { .sticky-header nav a:not(.btn-sm) { display: none; } }
+
+    /* ── Mobile hamburger menu ── */
+    .hamburger { display:none;background:none;border:none;cursor:pointer;padding:0.4rem;-webkit-tap-highlight-color:transparent; }
+    .hamburger svg { display:block; }
+    .mobile-nav-overlay { display:none; }
+    @media (max-width: 768px) {
+      .sticky-header nav { display: none; }
+      .sticky-header .btn-sm.desktop-cta { display: none; }
+      .hamburger { display:block; }
+      .mobile-nav-overlay {
+        display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:999;
+        background:rgba(8,8,10,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+        flex-direction:column;align-items:center;justify-content:center;gap:0;
+      }
+      .mobile-nav-overlay.open { display:flex; }
+      .mobile-nav-overlay a {
+        font-size:1.25rem;font-weight:600;color:var(--text-primary);text-decoration:none;
+        padding:1rem 2rem;width:100%;text-align:center;transition:color 0.2s;
+      }
+      .mobile-nav-overlay a:hover { color:var(--cyan); }
+      .mobile-nav-overlay .mobile-nav-cta {
+        margin-top:1.5rem;background:var(--cyan);color:#08080a;font-weight:700;
+        border-radius:12px;padding:0.85rem 2rem;font-size:1rem;width:auto;
+      }
+      .mobile-nav-close {
+        position:absolute;top:1rem;right:1.5rem;background:none;border:none;
+        cursor:pointer;padding:0.5rem;-webkit-tap-highlight-color:transparent;
+      }
+    }
 
     /* Capabilities Tabs */
     .cap-tab {
@@ -209,7 +237,7 @@
     .sticky-header .inner { max-width: 1120px; margin: 0 auto; padding: 0.75rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
     .sticky-header .btn-sm { background: var(--cyan); color: #08080a; font-weight: 700; border-radius: 10px; padding: 0.45rem 1.25rem; font-size: 0.85rem; text-decoration: none; font-family: 'Inter', sans-serif; transition: all 0.2s; }
     .sticky-header .btn-sm:hover { background: #0891b2; }
-    @media(max-width:768px){ .sticky-header .btn-sm { display:none; } }
+    /* btn-sm hidden on mobile handled by .desktop-cta rule above */
 
     /* ── Grid ── */
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
@@ -307,9 +335,25 @@
         <a href="#how-it-works" style="font-size:0.95rem;font-weight:500;color:var(--text-primary);text-decoration:none;transition:color 0.2s;">How It Works</a>
         <a href="#built-for" style="font-size:0.95rem;font-weight:500;color:var(--text-primary);text-decoration:none;transition:color 0.2s;">Built For</a>
       </nav>
-      <a href="#waitlist" class="btn-sm">Join the waitlist</a>
+      <a href="#waitlist" class="btn-sm desktop-cta">Join the waitlist</a>
+      <button class="hamburger" onclick="document.getElementById('mobile-nav').classList.add('open')" aria-label="Open menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
   </header>
+
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav-overlay" id="mobile-nav">
+    <button class="mobile-nav-close" onclick="document.getElementById('mobile-nav').classList.remove('open')" aria-label="Close menu">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <a href="#product" onclick="document.getElementById('mobile-nav').classList.remove('open')">Product</a>
+    <a href="#the-problem" onclick="document.getElementById('mobile-nav').classList.remove('open')">Problem</a>
+    <a href="#how-it-works" onclick="document.getElementById('mobile-nav').classList.remove('open')">How It Works</a>
+    <a href="#built-for" onclick="document.getElementById('mobile-nav').classList.remove('open')">Built For</a>
+    <a href="#waitlist" class="mobile-nav-cta" onclick="document.getElementById('mobile-nav').classList.remove('open')">Join the waitlist</a>
+  </div>
+
   <div style="height:3.25rem;"></div>
 
   <!-- ═══════════════════════════════════════════
