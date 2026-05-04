@@ -271,7 +271,7 @@
       /* Hide heavy images on mobile to save scroll length */
       .mobile-hide-img { display: none !important; }
       /* Capability panels: reduce padding + min-height */
-      .capabilities-wrap > div:last-child { padding: 1.25rem !important; min-height: auto !important; }
+      .cap-panels-container { padding: 1.25rem !important; min-height: auto !important; }
       /* Inline mockup grids: force single column on mobile */
       .cap-mockup-grid { grid-template-columns: 1fr !important; }
     }
@@ -411,7 +411,7 @@
         </div>
 
         <!-- Tab Panels (right) -->
-        <div style="padding:2.5rem;position:relative;min-height:380px;">
+        <div class="cap-panels-container" style="padding:2.5rem;position:relative;min-height:380px;">
           <div class="cap-panel active" data-panel="0">
             <h3 style="font-size:1.3rem;font-weight:700;color:var(--text-primary);margin-bottom:0.75rem;">Branded Intake Forms</h3>
             <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:1.25rem;">Build beautiful, mobile-friendly intake forms that match your firm's brand. Conditional logic guides clients through the exact questions for their case type — personal injury, family law, criminal defense, or any practice area you handle.</p>
