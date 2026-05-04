@@ -225,7 +225,8 @@
     @keyframes shimmer { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 
     /* ── Hero grid ── */
-    .hero-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; max-width: 680px; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; max-width: 1120px; }
+    @media (max-width: 768px) { .hero-grid { grid-template-columns: 1fr; } .hero-image { display: none; } }
 
     /* ── Mobile helpers ── */
     .hide-mobile { }
@@ -309,6 +310,11 @@
             </a>
             <a href="#how-it-works" class="btn-ghost">See how it works ↓</a>
           </div>
+        </div>
+
+        <!-- Right: Hero user image -->
+        <div class="hero-image reveal reveal-delay-2" style="border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.4);border:1px solid var(--border);">
+          <img src="images/hero-user.png" alt="Attorney using IntakeLink to manage client intake" style="width:100%;height:auto;display:block;" loading="eager" />
         </div>
 
       </div>
