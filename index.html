@@ -409,7 +409,33 @@
           <div class="cap-panel active" data-panel="0">
             <h3 style="font-size:1.3rem;font-weight:700;color:var(--text-primary);margin-bottom:0.75rem;">Branded Intake Forms</h3>
             <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:1.25rem;">Build beautiful, mobile-friendly intake forms that match your firm's brand. Conditional logic guides clients through the exact questions for their case type — personal injury, family law, criminal defense, or any practice area you handle.</p>
-            <img src="images/cap-intake-forms.png" alt="Intake form builder interface" style="width:100%;border-radius:10px;margin-bottom:1.25rem;border:1px solid var(--border);" loading="lazy" />
+            <!-- Inline mockup: Form builder -->
+            <div style="border:1px solid var(--border);border-radius:10px;padding:1.25rem;margin-bottom:1.25rem;background:#0d0d10;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+                <div style="display:flex;gap:0.5rem;">
+                  <span style="padding:0.3rem 0.75rem;border-radius:20px;font-size:0.7rem;font-weight:600;background:var(--cyan);color:#08080a;">1. Contact Info</span>
+                  <span style="padding:0.3rem 0.75rem;border-radius:20px;font-size:0.7rem;font-weight:500;background:#1a1a1e;color:var(--text-muted);border:1px solid var(--border);">2. Case Details</span>
+                  <span style="padding:0.3rem 0.75rem;border-radius:20px;font-size:0.7rem;font-weight:500;background:#1a1a1e;color:var(--text-muted);border:1px solid var(--border);">3. Documents</span>
+                </div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem;">
+                <div>
+                  <div style="font-size:0.65rem;color:var(--text-muted);margin-bottom:0.3rem;text-transform:uppercase;letter-spacing:0.05em;">Full Name</div>
+                  <div style="background:#1a1a1e;border:1px solid var(--border);border-radius:6px;padding:0.5rem 0.75rem;font-size:0.8rem;color:var(--text-secondary);">Sarah Mitchell</div>
+                </div>
+                <div>
+                  <div style="font-size:0.65rem;color:var(--text-muted);margin-bottom:0.3rem;text-transform:uppercase;letter-spacing:0.05em;">Email</div>
+                  <div style="background:#1a1a1e;border:1px solid var(--border);border-radius:6px;padding:0.5rem 0.75rem;font-size:0.8rem;color:var(--text-secondary);">sarah@email.com</div>
+                </div>
+              </div>
+              <div style="margin-bottom:0.75rem;">
+                <div style="font-size:0.65rem;color:var(--text-muted);margin-bottom:0.3rem;text-transform:uppercase;letter-spacing:0.05em;">Case Type</div>
+                <div style="background:#1a1a1e;border:1px solid var(--cyan);border-radius:6px;padding:0.5rem 0.75rem;font-size:0.8rem;color:var(--text-primary);display:flex;justify-content:space-between;align-items:center;">Personal Injury <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+              </div>
+              <div style="display:flex;justify-content:flex-end;">
+                <span style="padding:0.45rem 1.25rem;border-radius:8px;font-size:0.75rem;font-weight:600;background:var(--cyan);color:#08080a;">Next Step →</span>
+              </div>
+            </div>
             <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
               <span class="cap-chip">Conditional logic</span>
               <span class="cap-chip">Multi-step wizard</span>
@@ -420,7 +446,31 @@
           <div class="cap-panel" data-panel="1">
             <h3 style="font-size:1.3rem;font-weight:700;color:var(--text-primary);margin-bottom:0.75rem;">Conflict Check Engine</h3>
             <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:1.25rem;">Automatically cross-reference every new intake against your existing client roster and adverse parties. Get flagged conflicts before you open a case file — protecting your firm from ethical violations and malpractice risk.</p>
-            <img src="images/cap-conflict-check.png" alt="Conflict check results screen" style="width:100%;border-radius:10px;margin-bottom:1.25rem;border:1px solid var(--border);" loading="lazy" />
+            <!-- Inline mockup: Conflict check results -->
+            <div style="border:1px solid var(--border);border-radius:10px;padding:1.25rem;margin-bottom:1.25rem;background:#0d0d10;">
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span style="font-size:0.85rem;font-weight:600;color:#22c55e;">No conflicts found</span>
+                <span style="font-size:0.7rem;color:var(--text-muted);margin-left:auto;">Checked 847 records in 0.3s</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:0.5rem;">
+                <div style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 0.75rem;background:#1a1a1e;border-radius:8px;border:1px solid var(--border);">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="16 8 10.5 14 8 11.5"/></svg>
+                  <span style="font-size:0.78rem;color:var(--text-secondary);">Client roster</span>
+                  <span style="font-size:0.7rem;color:var(--text-muted);margin-left:auto;">412 clients — Clear</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 0.75rem;background:#1a1a1e;border-radius:8px;border:1px solid var(--border);">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="16 8 10.5 14 8 11.5"/></svg>
+                  <span style="font-size:0.78rem;color:var(--text-secondary);">Adverse parties</span>
+                  <span style="font-size:0.7rem;color:var(--text-muted);margin-left:auto;">289 parties — Clear</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 0.75rem;background:#1a1a1e;border-radius:8px;border:1px solid var(--border);">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="16 8 10.5 14 8 11.5"/></svg>
+                  <span style="font-size:0.78rem;color:var(--text-secondary);">Related entities</span>
+                  <span style="font-size:0.7rem;color:var(--text-muted);margin-left:auto;">146 entities — Clear</span>
+                </div>
+              </div>
+            </div>
             <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
               <span class="cap-chip">Automatic screening</span>
               <span class="cap-chip">Adverse party matching</span>
@@ -431,7 +481,23 @@
           <div class="cap-panel" data-panel="2">
             <h3 style="font-size:1.3rem;font-weight:700;color:var(--text-primary);margin-bottom:0.75rem;">E-Signature & Engagement Letters</h3>
             <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:1.25rem;">Auto-generate engagement letters pre-filled with client data from the intake form. Route for e-signature instantly — no printing, scanning, or chasing. Clients sign from their phone before they leave the consultation.</p>
-            <img src="images/cap-e-signature.png" alt="E-signature engagement letter interface" style="width:100%;border-radius:10px;margin-bottom:1.25rem;border:1px solid var(--border);" loading="lazy" />
+            <!-- Inline mockup: E-signature -->
+            <div style="border:1px solid var(--border);border-radius:10px;padding:1.25rem;margin-bottom:1.25rem;background:#0d0d10;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+                <span style="font-size:0.85rem;font-weight:600;color:var(--text-primary);">Engagement Letter — Sarah Mitchell</span>
+                <span style="padding:0.2rem 0.6rem;border-radius:12px;font-size:0.65rem;font-weight:600;background:rgba(234,179,8,0.15);color:#eab308;border:1px solid rgba(234,179,8,0.3);">Awaiting Signature</span>
+              </div>
+              <div style="background:#1a1a1e;border:1px solid var(--border);border-radius:8px;padding:1rem;margin-bottom:0.75rem;">
+                <div style="font-size:0.7rem;color:var(--text-muted);margin-bottom:0.5rem;font-style:italic;">Auto-populated from intake form:</div>
+                <div style="font-size:0.78rem;color:var(--text-secondary);line-height:1.6;">This Engagement Letter ("Agreement") is entered into between <span style="color:var(--cyan);font-weight:600;">Mitchell & Associates, PLLC</span> and <span style="color:var(--cyan);font-weight:600;">Sarah Mitchell</span> for representation in the matter of <span style="color:var(--cyan);font-weight:600;">Personal Injury — Auto Accident</span>...</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:1rem;">
+                <div style="flex:1;border-top:2px dashed var(--border);position:relative;padding-top:0.4rem;">
+                  <span style="font-size:0.65rem;color:var(--text-muted);">Client Signature</span>
+                </div>
+                <span style="padding:0.4rem 1rem;border-radius:8px;font-size:0.75rem;font-weight:600;background:var(--cyan);color:#08080a;">Sign Now</span>
+              </div>
+            </div>
             <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
               <span class="cap-chip">Auto-populated templates</span>
               <span class="cap-chip">Mobile e-signature</span>
@@ -442,7 +508,43 @@
           <div class="cap-panel" data-panel="3">
             <h3 style="font-size:1.3rem;font-weight:700;color:var(--text-primary);margin-bottom:0.75rem;">Retainer & Payment Collection</h3>
             <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:1.25rem;">Collect retainer fees the moment the engagement letter is signed. Integrated with LawPay and trust-account-compliant payment processors so funds land in the right IOLTA account — no manual invoicing or follow-up required.</p>
-            <img src="images/cap-payment.png" alt="Retainer payment collection screen" style="width:100%;border-radius:10px;margin-bottom:1.25rem;border:1px solid var(--border);" loading="lazy" />
+            <!-- Inline mockup: Payment -->
+            <div style="border:1px solid var(--border);border-radius:10px;padding:1.25rem;margin-bottom:1.25rem;background:#0d0d10;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+                <span style="font-size:0.85rem;font-weight:600;color:var(--text-primary);">Collect Retainer</span>
+                <span style="font-size:0.7rem;color:var(--text-muted);">via LawPay</span>
+              </div>
+              <div style="background:#1a1a1e;border:1px solid var(--border);border-radius:8px;padding:1rem;margin-bottom:0.75rem;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+                  <span style="font-size:0.75rem;color:var(--text-muted);">Retainer Amount</span>
+                  <span style="font-size:1.4rem;font-weight:800;color:var(--text-primary);">$3,500.00</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+                  <span style="font-size:0.75rem;color:var(--text-muted);">Deposit To</span>
+                  <span style="font-size:0.8rem;font-weight:600;color:var(--cyan);">IOLTA Trust Account ****4821</span>
+                </div>
+                <div style="height:1px;background:var(--border);margin:0.75rem 0;"></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;">
+                  <div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;">CARD NUMBER</div>
+                    <div style="background:#08080a;border:1px solid var(--border);border-radius:5px;padding:0.4rem 0.6rem;font-size:0.75rem;color:var(--text-secondary);">•••• •••• •••• 7294</div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;">
+                    <div>
+                      <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;">EXP</div>
+                      <div style="background:#08080a;border:1px solid var(--border);border-radius:5px;padding:0.4rem 0.6rem;font-size:0.75rem;color:var(--text-secondary);">09/28</div>
+                    </div>
+                    <div>
+                      <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;">CVC</div>
+                      <div style="background:#08080a;border:1px solid var(--border);border-radius:5px;padding:0.4rem 0.6rem;font-size:0.75rem;color:var(--text-secondary);">•••</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="display:flex;justify-content:flex-end;">
+                <span style="padding:0.5rem 1.5rem;border-radius:8px;font-size:0.8rem;font-weight:600;background:var(--cyan);color:#08080a;">Collect $3,500 →</span>
+              </div>
+            </div>
             <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
               <span class="cap-chip">LawPay integration</span>
               <span class="cap-chip">IOLTA compliant</span>
@@ -453,7 +555,38 @@
           <div class="cap-panel" data-panel="4">
             <h3 style="font-size:1.3rem;font-weight:700;color:var(--text-primary);margin-bottom:0.75rem;">Document Collection & Uploads</h3>
             <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:1.25rem;">Request specific documents (ID, insurance cards, police reports) as part of the intake flow. Clients upload directly from their phone camera or file picker. Everything lands organized and labeled in the case folder — no email attachments to sort.</p>
-            <img src="images/cap-documents.png" alt="Document upload and collection interface" style="width:100%;border-radius:10px;margin-bottom:1.25rem;border:1px solid var(--border);" loading="lazy" />
+            <!-- Inline mockup: Document checklist -->
+            <div style="border:1px solid var(--border);border-radius:10px;padding:1.25rem;margin-bottom:1.25rem;background:#0d0d10;">
+              <div style="font-size:0.85rem;font-weight:600;color:var(--text-primary);margin-bottom:0.75rem;">Required Documents (3/5 uploaded)</div>
+              <div style="width:100%;height:4px;background:#1a1a1e;border-radius:4px;margin-bottom:1rem;overflow:hidden;"><div style="width:60%;height:100%;background:var(--cyan);border-radius:4px;"></div></div>
+              <div style="display:flex;flex-direction:column;gap:0.5rem;">
+                <div style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 0.75rem;background:#1a1a1e;border-radius:8px;border:1px solid var(--border);">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span style="font-size:0.78rem;color:var(--text-secondary);flex:1;">Government-issued ID</span>
+                  <span style="font-size:0.65rem;color:#22c55e;">Uploaded</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 0.75rem;background:#1a1a1e;border-radius:8px;border:1px solid var(--border);">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span style="font-size:0.78rem;color:var(--text-secondary);flex:1;">Insurance card (front & back)</span>
+                  <span style="font-size:0.65rem;color:#22c55e;">Uploaded</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 0.75rem;background:#1a1a1e;border-radius:8px;border:1px solid var(--border);">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span style="font-size:0.78rem;color:var(--text-secondary);flex:1;">Police report</span>
+                  <span style="font-size:0.65rem;color:#22c55e;">Uploaded</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 0.75rem;background:#1a1a1e;border-radius:8px;border:1px solid rgba(234,179,8,0.3);">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  <span style="font-size:0.78rem;color:var(--text-secondary);flex:1;">Medical records</span>
+                  <span style="font-size:0.65rem;color:#eab308;">Pending</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 0.75rem;background:#1a1a1e;border-radius:8px;border:1px solid rgba(234,179,8,0.3);">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  <span style="font-size:0.78rem;color:var(--text-secondary);flex:1;">Accident photos</span>
+                  <span style="font-size:0.65rem;color:#eab308;">Pending</span>
+                </div>
+              </div>
+            </div>
             <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
               <span class="cap-chip">Camera capture</span>
               <span class="cap-chip">File type validation</span>
@@ -464,7 +597,40 @@
           <div class="cap-panel" data-panel="5">
             <h3 style="font-size:1.3rem;font-weight:700;color:var(--text-primary);margin-bottom:0.75rem;">Case Folder Auto-Creation</h3>
             <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:1.25rem;">The moment an intake is complete — form submitted, letter signed, retainer collected — a structured case folder generates automatically in your PMS. Documents filed, contacts linked, tasks assigned. Zero data entry from your team.</p>
-            <img src="images/cap-case-folder.png" alt="Case folder auto-creation screen" style="width:100%;border-radius:10px;margin-bottom:1.25rem;border:1px solid var(--border);" loading="lazy" />
+            <!-- Inline mockup: Case folder -->
+            <div style="border:1px solid var(--border);border-radius:10px;padding:1.25rem;margin-bottom:1.25rem;background:#0d0d10;">
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                <span style="font-size:0.85rem;font-weight:600;color:var(--text-primary);">Mitchell_Sarah_PI_2024-003</span>
+                <span style="padding:0.15rem 0.5rem;border-radius:10px;font-size:0.6rem;font-weight:600;background:rgba(34,197,94,0.15);color:#22c55e;margin-left:0.5rem;">Auto-generated</span>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.75rem;">
+                <div style="display:flex;align-items:center;gap:0.5rem;padding:0.5rem 0.7rem;background:#1a1a1e;border-radius:6px;border:1px solid var(--border);">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+                  <span style="font-size:0.7rem;color:var(--text-secondary);">Engagement Letter.pdf</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:0.5rem;padding:0.5rem 0.7rem;background:#1a1a1e;border-radius:6px;border:1px solid var(--border);">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+                  <span style="font-size:0.7rem;color:var(--text-secondary);">Client_ID.jpg</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:0.5rem;padding:0.5rem 0.7rem;background:#1a1a1e;border-radius:6px;border:1px solid var(--border);">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+                  <span style="font-size:0.7rem;color:var(--text-secondary);">Police_Report.pdf</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:0.5rem;padding:0.5rem 0.7rem;background:#1a1a1e;border-radius:6px;border:1px solid var(--border);">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+                  <span style="font-size:0.7rem;color:var(--text-secondary);">Insurance_Card.jpg</span>
+                </div>
+              </div>
+              <div style="border-top:1px solid var(--border);padding-top:0.75rem;">
+                <div style="font-size:0.7rem;color:var(--text-muted);margin-bottom:0.4rem;">Auto-assigned tasks:</div>
+                <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+                  <span style="font-size:0.65rem;padding:0.2rem 0.5rem;background:#1a1a1e;border:1px solid var(--border);border-radius:4px;color:var(--text-secondary);">☐ Review engagement letter</span>
+                  <span style="font-size:0.65rem;padding:0.2rem 0.5rem;background:#1a1a1e;border:1px solid var(--border);border-radius:4px;color:var(--text-secondary);">☐ Verify insurance coverage</span>
+                  <span style="font-size:0.65rem;padding:0.2rem 0.5rem;background:#1a1a1e;border:1px solid var(--border);border-radius:4px;color:var(--text-secondary);">☐ Schedule initial consultation</span>
+                </div>
+              </div>
+            </div>
             <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
               <span class="cap-chip">PMS integration</span>
               <span class="cap-chip">Auto-filing</span>
@@ -475,7 +641,46 @@
           <div class="cap-panel" data-panel="6">
             <h3 style="font-size:1.3rem;font-weight:700;color:var(--text-primary);margin-bottom:0.75rem;">Real-Time Intake Dashboard</h3>
             <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:1.25rem;">See every intake in flight — who started, who stalled, who completed. Track conversion rates, average time-to-retainer, and revenue collected. Your front desk and managing partners get the visibility they need without asking around.</p>
-            <img src="images/cap-dashboard.png" alt="Real-time intake analytics dashboard" style="width:100%;border-radius:10px;margin-bottom:1.25rem;border:1px solid var(--border);" loading="lazy" />
+            <!-- Inline mockup: Dashboard -->
+            <div style="border:1px solid var(--border);border-radius:10px;padding:1.25rem;margin-bottom:1.25rem;background:#0d0d10;">
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-bottom:1rem;">
+                <div style="background:#1a1a1e;border:1px solid var(--border);border-radius:8px;padding:0.75rem;text-align:center;">
+                  <div style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.2rem;">Active</div>
+                  <div style="font-size:1.3rem;font-weight:800;color:var(--cyan);">12</div>
+                </div>
+                <div style="background:#1a1a1e;border:1px solid var(--border);border-radius:8px;padding:0.75rem;text-align:center;">
+                  <div style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.2rem;">Completion</div>
+                  <div style="font-size:1.3rem;font-weight:800;color:#22c55e;">87%</div>
+                </div>
+                <div style="background:#1a1a1e;border:1px solid var(--border);border-radius:8px;padding:0.75rem;text-align:center;">
+                  <div style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.2rem;">Revenue</div>
+                  <div style="font-size:1.3rem;font-weight:800;color:var(--text-primary);">$18.5K</div>
+                </div>
+              </div>
+              <!-- Mini chart -->
+              <div style="margin-bottom:1rem;">
+                <svg viewBox="0 0 400 60" style="width:100%;height:auto;">
+                  <polyline fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="0,50 50,45 100,38 150,40 200,30 250,22 300,15 350,8 400,5"/>
+                  <defs><linearGradient id="capCg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#06b6d4" stop-opacity="0.2"/><stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/></linearGradient></defs>
+                  <polygon fill="url(#capCg)" points="0,50 50,45 100,38 150,40 200,30 250,22 300,15 350,8 400,5 400,60 0,60"/>
+                </svg>
+              </div>
+              <!-- Recent intakes -->
+              <div style="font-size:0.7rem;">
+                <div style="display:grid;grid-template-columns:2fr 1.2fr 1fr;gap:0.5rem;padding:0.4rem 0;border-bottom:1px solid var(--border);color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.04em;font-size:0.6rem;">
+                  <span>Client</span><span>Case Type</span><span>Status</span>
+                </div>
+                <div style="display:grid;grid-template-columns:2fr 1.2fr 1fr;gap:0.5rem;padding:0.5rem 0;border-bottom:1px solid #1a1a1e;color:var(--text-secondary);">
+                  <span>Sarah Mitchell</span><span>Personal Injury</span><span style="color:#22c55e;">✓ Complete</span>
+                </div>
+                <div style="display:grid;grid-template-columns:2fr 1.2fr 1fr;gap:0.5rem;padding:0.5rem 0;border-bottom:1px solid #1a1a1e;color:var(--text-secondary);">
+                  <span>James Rivera</span><span>Criminal Def.</span><span style="color:var(--cyan);">● In Progress</span>
+                </div>
+                <div style="display:grid;grid-template-columns:2fr 1.2fr 1fr;gap:0.5rem;padding:0.5rem 0;color:var(--text-secondary);">
+                  <span>Emily Chen</span><span>Family Law</span><span style="color:#eab308;">◌ Stalled</span>
+                </div>
+              </div>
+            </div>
             <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
               <span class="cap-chip">Live status view</span>
               <span class="cap-chip">Conversion metrics</span>
