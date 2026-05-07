@@ -1,3 +1,9 @@
+// resend-notify.js — IntakeLink LP
+// Required env vars: RESEND_API_KEY, RESEND_FROM_EMAIL, CONTACT_EMAIL
+// RESEND_SEGMENT_ID defaults to the IntakeLink waitlist segment if not overridden.
+
+const PRODUCT_SEGMENT_ID = '6cac572e-0465-45b9-b5c9-b857176371eb'; // Waitlist-IntakeLink
+
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method Not Allowed' });
@@ -11,7 +17,7 @@ module.exports = async function handler(req, res) {
 
   const fromEmail = process.env.RESEND_FROM_EMAIL || 'LeanAI Studio <noreply@leanaistudio.com>';
   const contactEmail = process.env.CONTACT_EMAIL || 'contact@leanaistudio.com';
-  const audienceId = process.env.RESEND_AUDIENCE_ID || null;
+  const segmentId = process.env.RESEND_SEGMENT_ID || PRODUCT_SEGMENT_ID;
 
   const { email, first_name, product } = req.body || {};
   if (!email) {
@@ -26,21 +32,17 @@ module.exports = async function handler(req, res) {
 
   const results = {};
 
-  // Step 1: Create contact in Resend (with source tracking)
+  // Step 1: Create contact in Resend and assign to waitlist segment atomically
   try {
     const contactPayload = {
       email: email,
       first_name: firstName || undefined,
       unsubscribed: false,
-    };
-    if (audienceId) {
-      contactPayload.audience_id = audienceId;
-    }
-    // Pass product name as source so Resend audience shows where each contact came from
-    contactPayload.properties = {
-      source: productName,
-      product: productName,
-      signed_up_at: new Date().toISOString(),
+      properties: {
+        source: productName,
+        signed_up_at: new Date().toISOString(),
+      },
+      segments: [segmentId],
     };
 
     const contactRes = await fetch('https://api.resend.com/contacts', {
@@ -77,14 +79,12 @@ module.exports = async function handler(req, res) {
     <tr>
       <td align="center">
         <table width="560" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.08);">
-          <!-- Header gradient -->
           <tr>
             <td style="background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 100%);padding:32px 40px;">
               <p style="margin:0;color:#ffffff;font-size:13px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;opacity:0.85;">LeanAI Studio</p>
               <h1 style="margin:8px 0 0;color:#ffffff;font-size:26px;font-weight:700;line-height:1.3;">You're on the ${productName} waitlist!</h1>
             </td>
           </tr>
-          <!-- Body -->
           <tr>
             <td style="padding:36px 40px;">
               <p style="margin:0 0 16px;color:#374151;font-size:16px;line-height:1.6;">${greeting}</p>
@@ -97,7 +97,6 @@ module.exports = async function handler(req, res) {
               <p style="margin:0 0 24px;color:#374151;font-size:16px;line-height:1.6;">
                 We may reach out for a quick conversation to make sure we're building the right thing. If you're open to that, just reply to this email.
               </p>
-              <!-- CTA -->
               <table cellpadding="0" cellspacing="0" style="margin:0 0 28px;">
                 <tr>
                   <td style="background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 100%);border-radius:8px;">
@@ -110,7 +109,6 @@ module.exports = async function handler(req, res) {
               <p style="margin:0;color:#6b7280;font-size:14px;">Founder, LeanAI Studio</p>
             </td>
           </tr>
-          <!-- Footer -->
           <tr>
             <td style="background:#f9fafb;padding:20px 40px;border-top:1px solid #e5e7eb;">
               <p style="margin:0;color:#9ca3af;font-size:12px;line-height:1.6;text-align:center;">
