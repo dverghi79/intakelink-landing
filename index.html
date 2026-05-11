@@ -373,7 +373,7 @@
             <div class="badge"><span class="dot"></span> → Early Access Open · Limited spots</div>
           </div>
 
-          <h1 id="hero-headline" class="reveal reveal-delay-1" data-default-headline="From consultation to signed retainer in one link." style="font-size:clamp(2.25rem,4.5vw,3.25rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:1.5rem;color:var(--text-primary);">
+          <h1 id="hero-headline" class="reveal reveal-delay-1" style="font-size:clamp(2.25rem,4.5vw,3.25rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:1.5rem;color:var(--text-primary);">
             From consultation to <span class="gradient-text">signed retainer in one link.</span>
           </h1>
 
@@ -1311,14 +1311,6 @@
     // Initialize on load
     document.addEventListener('DOMContentLoaded', function() {
       setupRevealAnimations();
-
-      /* DKI headline replacement — Google Ads ?headline= override */
-      var params = new URLSearchParams(window.location.search);
-      var customHL = params.get('headline');
-      if (customHL) {
-        var heroEl = document.getElementById('hero-headline');
-        if (heroEl) heroEl.textContent = decodeURIComponent(customHL);
-      }
 
       /* Capabilities tabs */
       document.querySelectorAll('.cap-tab').forEach(function(tab) {
